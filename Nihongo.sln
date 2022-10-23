@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nihongo.App", "App\Nihongo.App.csproj", "{E914CE5F-D15F-4C50-95D5-F530EAED59DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nihongo.Console", "Console\Nihongo.Console.csproj", "{BAB8F42D-2795-41E5-8348-D7774F48848A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nihongo.Core", "Core\Nihongo.Core.csproj", "{6A58EF62-B9E2-487E-9E1B-5AD5EF2608B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E914CE5F-D15F-4C50-95D5-F530EAED59DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E914CE5F-D15F-4C50-95D5-F530EAED59DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E914CE5F-D15F-4C50-95D5-F530EAED59DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E914CE5F-D15F-4C50-95D5-F530EAED59DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAB8F42D-2795-41E5-8348-D7774F48848A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAB8F42D-2795-41E5-8348-D7774F48848A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAB8F42D-2795-41E5-8348-D7774F48848A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAB8F42D-2795-41E5-8348-D7774F48848A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A58EF62-B9E2-487E-9E1B-5AD5EF2608B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A58EF62-B9E2-487E-9E1B-5AD5EF2608B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A58EF62-B9E2-487E-9E1B-5AD5EF2608B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A58EF62-B9E2-487E-9E1B-5AD5EF2608B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
