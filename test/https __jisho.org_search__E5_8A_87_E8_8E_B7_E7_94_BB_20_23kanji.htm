@@ -1,0 +1,1985 @@
+<!DOCTYPE html>
+<html data-color-theme="auto" style="" class=" js no-touch no-speech audiocontext getusermedia"><head><meta class="foundation-mq-small"><meta class="foundation-mq-small-only"><meta class="foundation-mq-medium"><meta class="foundation-mq-medium-only"><meta class="foundation-mq-large"><meta class="foundation-mq-large-only"><meta class="foundation-mq-xlarge"><meta class="foundation-mq-xlarge-only"><meta class="foundation-mq-xxlarge"><meta class="foundation-data-attribute-namespace">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="apple-mobile-web-app-title" content="Jisho">
+    <meta name="theme-color" content="#47DB27">
+    <link href="https://jisho.org/opensearch.xml" rel="search" title="Jisho" type="application/opensearchdescription+xml">
+    <link rel="icon" href="https://assets.jisho.org/assets/touch-icon-017b99ca4bfd11363a97f66cc4c00b1667613a05e38d08d858aa5e2a35dce055.png">
+    <link rel="apple-touch-icon" href="https://assets.jisho.org/assets/touch-icon-017b99ca4bfd11363a97f66cc4c00b1667613a05e38d08d858aa5e2a35dce055.png">
+    <script>
+
+/* Modernizr 2.6.2 (Custom Build) | MIT & BSD
+ * Build: http://modernizr.com/download/#-touch-cssclasses-addtest-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes
+ */
+;window.Modernizr=function(a,b,c){function z(a){j.cssText=a}function A(a,b){return z(m.join(a+";")+(b||""))}function B(a,b){return typeof a===b}function C(a,b){return!!~(""+a).indexOf(b)}function D(a,b){for(var d in a){var e=a[d];if(!C(e,"-")&&j[e]!==c)return b=="pfx"?e:!0}return!1}function E(a,b,d){for(var e in a){var f=b[a[e]];if(f!==c)return d===!1?a[e]:B(f,"function")?f.bind(d||b):f}return!1}function F(a,b,c){var d=a.charAt(0).toUpperCase()+a.slice(1),e=(a+" "+o.join(d+" ")+d).split(" ");return B(b,"string")||B(b,"undefined")?D(e,b):(e=(a+" "+p.join(d+" ")+d).split(" "),E(e,b,c))}var d="2.6.2",e={},f=!0,g=b.documentElement,h="modernizr",i=b.createElement(h),j=i.style,k,l={}.toString,m=" -webkit- -moz- -o- -ms- ".split(" "),n="Webkit Moz O ms",o=n.split(" "),p=n.toLowerCase().split(" "),q={},r={},s={},t=[],u=t.slice,v,w=function(a,c,d,e){var f,i,j,k,l=b.createElement("div"),m=b.body,n=m||b.createElement("body");if(parseInt(d,10))while(d--)j=b.createElement("div"),j.id=e?e[d]:h+(d+1),l.appendChild(j);return f=["&#173;",'<style id="s',h,'">',a,"</style>"].join(""),l.id=h,(m?l:n).innerHTML+=f,n.appendChild(l),m||(n.style.background="",n.style.overflow="hidden",k=g.style.overflow,g.style.overflow="hidden",g.appendChild(n)),i=c(l,a),m?l.parentNode.removeChild(l):(n.parentNode.removeChild(n),g.style.overflow=k),!!i},x={}.hasOwnProperty,y;!B(x,"undefined")&&!B(x.call,"undefined")?y=function(a,b){return x.call(a,b)}:y=function(a,b){return b in a&&B(a.constructor.prototype[b],"undefined")},Function.prototype.bind||(Function.prototype.bind=function(b){var c=this;if(typeof c!="function")throw new TypeError;var d=u.call(arguments,1),e=function(){if(this instanceof e){var a=function(){};a.prototype=c.prototype;var f=new a,g=c.apply(f,d.concat(u.call(arguments)));return Object(g)===g?g:f}return c.apply(b,d.concat(u.call(arguments)))};return e}),q.touch=function(){var c;return"ontouchstart"in a||a.DocumentTouch&&b instanceof DocumentTouch?c=!0:w(["@media (",m.join("touch-enabled),("),h,")","{#modernizr{top:9px;position:absolute}}"].join(""),function(a){c=a.offsetTop===9}),c};for(var G in q)y(q,G)&&(v=G.toLowerCase(),e[v]=q[G](),t.push((e[v]?"":"no-")+v));return e.addTest=function(a,b){if(typeof a=="object")for(var d in a)y(a,d)&&e.addTest(d,a[d]);else{a=a.toLowerCase();if(e[a]!==c)return e;b=typeof b=="function"?b():b,typeof f!="undefined"&&f&&(g.className+=" "+(b?"":"no-")+a),e[a]=b}return e},z(""),i=k=null,e._version=d,e._prefixes=m,e._domPrefixes=p,e._cssomPrefixes=o,e.testProp=function(a){return D([a])},e.testAllProps=F,e.testStyles=w,e.prefixed=function(a,b,c){return b?F(a,b,c):F(a,"pfx")},g.className=g.className.replace(/(^|\s)no-js(\s|$)/,"$1$2")+(f?" js "+t.join(" "):""),e}(this,this.document);
+
+</script>
+
+<script>
+
+  Modernizr.addTest('speech', function(){
+    return Modernizr.prefixed('speechRecognition', window);
+  });
+
+  Modernizr.addTest('AudioContext', function(){
+    return Modernizr.prefixed('AudioContext', window);
+  });
+
+  Modernizr.addTest('getUserMedia', function(){
+    return Modernizr.prefixed('getUserMedia', navigator);
+  });
+
+</script>
+
+    <link rel="stylesheet" media="screen" href="https%20__jisho.org_search__E5_8A_87_E8_8E_B7_E7_94_BB_20_23kanji_files/application-61d8e80944056be2e8c772e3d3b243767cc3550ca5b7da4d.css">
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="Ycd0m3Ud90LKRDyiCODml57Z7fiMbT8Dth4+o4FoUP41frmBZ+WtRYcscNXneeiBjxUxnFDfGae7eYM1gCdTaw==">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="https://assets.jisho.org/assets/favicon-062c4a0240e1e6d72c38aa524742c2d558ee6234497d91dd6b75a182ea823d65.ico">
+    <title>劇获画#kanji - Jisho.org</title>
+    <meta name="Description" content="Japanese dictionary search results for 劇获画#kanji.">
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:site" content="@jisho">
+      <meta name="twitter:title" content="Japanese kanji search for &quot;劇获画#kanji&quot;">
+      <meta name="twitter:description" content="2 kanji found. See the full details ...">
+    <script async="" src="https%20__jisho.org_search__E5_8A_87_E8_8E_B7_E7_94_BB_20_23kanji_files/gpt.js"></script>
+    <script>
+      var googletag = googletag || {};
+      googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+      googletag.cmd.push(function() {
+        googletag.pubads().setPrivacySettings({
+          limitedAds: true,
+          nonPersonalizedAds: true,
+          restrictDataProcessing: true,
+        });
+      });
+
+      googletag.cmd.push(function() {
+        googletag.defineSlot('\/1910472\/search_right_half', [ 300.0 ,  150.0 ], 'div-gpt-ad-1528340241998-0').addService(googletag.pubads());
+        googletag.defineSlot('\/1910472\/search_right_full', [ 300.0 ,  250.0 ], 'div-gpt-ad-1528340390859-0').addService(googletag.pubads());
+        googletag.defineSlot('\/1910472\/search_bottom_leaderboard', [ 728.0 ,  90.0 ], 'div-gpt-ad-1528340463374-0').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.pubads().collapseEmptyDivs();
+        googletag.enableServices();
+      });
+    </script>
+  <style></style></head>
+  <body class="highlight_keyword highlight_common_readings highlight_common_representations production">
+    
+<header class="row collapse">
+  <div class="small-4 columns">
+    <h1 class="logo"><a href="https://jisho.org/">Jisho</a></h1>
+  </div>
+  <div class="small-8 columns">
+    <nav class="nav-main_navigation">
+  <ul class="links">
+    <li><a href="https://jisho.org/forum">Forum</a></li>
+    <li><a href="https://jisho.org/about">About</a></li>
+    <li>
+      <div class="color_theme_picker--wrapper">
+        <a href="#">Theme</a>
+        <ul class="color_theme_picker--choices">
+          <li><a href="https://jisho.org/search/%E5%8A%87%E8%8E%B7%E7%94%BB%23kanji?color_theme=light&amp;exact=false&amp;original_keyword=%E5%8A%87%E8%8E%B7%E7%94%BB%23kanji">Light mode</a></li>
+          <li><a href="https://jisho.org/search/%E5%8A%87%E8%8E%B7%E7%94%BB%23kanji?color_theme=dark&amp;exact=false&amp;original_keyword=%E5%8A%87%E8%8E%B7%E7%94%BB%23kanji">Dark mode</a></li>
+          <li><div>Auto</div></li>
+        </ul>
+      </div>
+    </li> 
+    <li>
+      <div id="login_link">
+          <a href="https://jisho.org/auth/auth0">Log in / Sign up</a>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+  </div>
+</header>
+
+    <div class="row collapse">
+      <div class="large-12 columns">
+        <form class="search" data-live="false" id="search" action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">  <div id="input_methods" class="input_methods">
+    <div class="input_method_button disable-mobile-hover-background" id="handwriting_button">
+      <svg viewBox="0 0 30 30" class="icon tablet-icon ">
+  <use xlink:href="https://jisho.org/assets/icons-ab7975eb6f8bb532f99ba2d769be43c5431dec4c0e4d220df7367f1d954d9424.svg#tablet"></use>
+</svg>
+
+      <h4>Draw</h4>
+    </div>
+    <div class="input_method_button disable-mobile-hover-background" id="radical_button">
+      <svg viewBox="0 0 30 30" class="icon radical-icon ">
+  <use xlink:href="https://jisho.org/assets/icons-ab7975eb6f8bb532f99ba2d769be43c5431dec4c0e4d220df7367f1d954d9424.svg#radical"></use>
+</svg>
+
+      <h4>Radicals</h4>
+    </div>
+    <div class="input_method_button disable-mobile-hover-background" id="speech_button">
+      <svg viewBox="0 0 30 30" class="icon speech-icon ">
+  <use xlink:href="https://jisho.org/assets/icons-ab7975eb6f8bb532f99ba2d769be43c5431dec4c0e4d220df7367f1d954d9424.svg#speech"></use>
+</svg>
+
+      <h4>Voice</h4>
+    </div>
+  </div>
+  <div class="overlay">
+    <div id="search_main" class="main">
+      <div class="inner">
+        <div id="advanced_button" class="search_type">
+          <span class="text" id="search_dropdown_text">Kanji</span>
+          <span class="carat">▾</span>
+        </div>
+        <button type="submit" class="submit icon" tabindex="2">
+          <svg viewBox="0 0 30 30" class="icon search-icon ">
+  <use xlink:href="https://jisho.org/assets/icons-ab7975eb6f8bb532f99ba2d769be43c5431dec4c0e4d220df7367f1d954d9424.svg#search"></use>
+</svg>
+
+        </button>
+        <a class="search-form_clear-button_js search-form_clear-button icon" accesskey="1" tabindex="3">
+          <svg viewBox="0 0 30 30" class="icon clear-icon ">
+  <use xlink:href="https://jisho.org/assets/icons-ab7975eb6f8bb532f99ba2d769be43c5431dec4c0e4d220df7367f1d954d9424.svg#clear"></use>
+</svg>
+
+        </a>
+
+        <div class="text_input">
+          <div class="hidden range" style="font-size: 22px; font-weight: 400; display: none;"></div>
+          <input type="text" class="keyword japanese_gothic" name="keyword" id="keyword" value="劇获画#kanji" tabindex="1" autocapitalize="none" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="English, Japanese, Romaji, words or text" data-autoload="true" data-effective-keyword="actual" lang="ja">
+        </div>
+      </div>
+      <div id="search_sub" class="sub" style="height: 0px;">
+        <div id="radical_area" class="area radical combined_mode" style="display: none;">
+  <div class="results_wrapper">
+  <div class="results">
+    <div class="list">
+      <div class="instructions">
+        <div class="vertical-bottom">
+          <div class="vertical-bottom-inner">
+            
+    <div class="arrow">▾</div>
+    <div class="text">
+      Find kanji by their parts. Click on
+      <svg viewBox="0 0 30 30" class="icon reset-icon inline">
+  <use xlink:href="https://jisho.org/assets/icons-ab7975eb6f8bb532f99ba2d769be43c5431dec4c0e4d220df7367f1d954d9424.svg#reset"></use>
+</svg>
+
+      to reset radicals.
+    </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="show_more">More</div>
+    <div class="show_less link">Less</div>
+  </div>
+  <div class="scroll_indicator show-for-small-only"></div>
+</div>
+  <!-- <p>
+  Click on the parts that are in the kanji you are looking for. You can click on them again to de-select them.
+  <input type="button" value="Reset" id="reset_button" onclick='Radicals.reset()' />
+</p> -->
+
+<ul class="radical_table clearfix" lang="ja">
+  <li class="reset_icon_list_item">
+    <svg viewBox="0 0 30 30" class="icon reset-icon reset_radicals" title="Reset selection">
+  <use xlink:href="https://jisho.org/assets/icons-ab7975eb6f8bb532f99ba2d769be43c5431dec4c0e4d220df7367f1d954d9424.svg#reset"></use>
+</svg>
+
+  </li>
+  <li class="number">1</li>
+  <li class="radical available" data-radical="1">一</li>
+  <li class="radical available" data-radical="2">｜</li>
+  <li class="radical available" data-radical="3">丶</li>
+  <li class="radical available" data-radical="4">ノ</li>
+  <li class="radical available" data-radical="5">乙</li>
+  <li class="radical available" data-radical="6">亅</li>
+  <li class="number">2</li>
+  <li class="radical available" data-radical="7">二</li>
+  <li class="radical available" data-radical="8">亠</li>
+  <li class="radical available" data-radical="9">人</li>
+  <li class="radical radical-image radical-10 available" data-radical="10" data-radk="化">⺅</li>
+  <li class="radical radical-image radical-11 available" data-radical="11" data-radk="个">𠆢</li>
+  <li class="radical available" data-radical="12">儿</li>
+  <li class="radical available" data-radical="13">入</li>
+  <li class="radical available" data-radical="14">ハ</li>
+  <li class="radical radical-image radical-15 available" data-radical="15" data-radk="并">丷</li>
+  <li class="radical available" data-radical="16">冂</li>
+  <li class="radical available" data-radical="17">冖</li>
+  <li class="radical available" data-radical="18">冫</li>
+  <li class="radical available" data-radical="19">几</li>
+  <li class="radical available" data-radical="20">凵</li>
+  <li class="radical available" data-radical="21">刀</li>
+  <li class="radical radical-image radical-22 available" data-radical="22" data-radk="刈">⺉</li>
+  <li class="radical available" data-radical="23">力</li>
+  <li class="radical available" data-radical="24">勹</li>
+  <li class="radical available" data-radical="25">匕</li>
+  <li class="radical available" data-radical="26">匚</li>
+  <li class="radical available" data-radical="27">十</li>
+  <li class="radical available" data-radical="28">卜</li>
+  <li class="radical available" data-radical="29">卩</li>
+  <li class="radical available" data-radical="30">厂</li>
+  <li class="radical available" data-radical="31">厶</li>
+  <li class="radical available" data-radical="32">又</li>
+  <li class="radical available" data-radical="33">マ</li>
+  <li class="radical available" data-radical="34">九</li>
+  <li class="radical available" data-radical="35">ユ</li>
+  <li class="radical available" data-radical="36">乃</li>
+  <li class="radical available" data-radical="360" data-radk="乞">𠂉</li>
+  <li class="number">3</li>
+  <li class="radical radical-image radical-37 available" data-radical="37" data-radk="込">⻌</li>
+  <li class="radical available" data-radical="38">口</li>
+  <li class="radical available" data-radical="39">囗</li>
+  <li class="radical available" data-radical="40">土</li>
+  <li class="radical available" data-radical="41">士</li>
+  <li class="radical available" data-radical="42">夂</li>
+  <li class="radical available" data-radical="43">夕</li>
+  <li class="radical available" data-radical="44">大</li>
+  <li class="radical available" data-radical="45">女</li>
+  <li class="radical available" data-radical="46">子</li>
+  <li class="radical available" data-radical="47">宀</li>
+  <li class="radical available" data-radical="48">寸</li>
+  <li class="radical available" data-radical="49">小</li>
+  <li class="radical radical-image radical-50 available" data-radical="50" data-radk="尚">⺌</li>
+  <li class="radical available" data-radical="51">尢</li>
+  <li class="radical available" data-radical="52">尸</li>
+  <li class="radical available" data-radical="53">屮</li>
+  <li class="radical available" data-radical="54">山</li>
+  <li class="radical available" data-radical="55">川</li>
+  <li class="radical available" data-radical="56">巛</li>
+  <li class="radical available" data-radical="57">工</li>
+  <li class="radical available" data-radical="58">已</li>
+  <li class="radical available" data-radical="59">巾</li>
+  <li class="radical available" data-radical="60">干</li>
+  <li class="radical available" data-radical="61">幺</li>
+  <li class="radical available" data-radical="62">广</li>
+  <li class="radical available" data-radical="63">廴</li>
+  <li class="radical available" data-radical="64">廾</li>
+  <li class="radical available" data-radical="65">弋</li>
+  <li class="radical available" data-radical="66">弓</li>
+  <li class="radical available" data-radical="67">ヨ</li>
+  <li class="radical available" data-radical="68">彑</li>
+  <li class="radical available" data-radical="69">彡</li>
+  <li class="radical available" data-radical="70">彳</li>
+  <li class="radical radical-image radical-71 available" data-radical="71" data-radk="忙">⺖</li>
+  <li class="radical radical-image radical-72 available" data-radical="72" data-radk="扎">⺘</li>
+  <li class="radical radical-image radical-73 available" data-radical="73" data-radk="汁">⺡</li>
+  <li class="radical radical-image radical-74 available" data-radical="74" data-radk="犯">⺨</li>
+  <li class="radical radical-image radical-75 available" data-radical="75" data-radk="艾">⺾</li>
+  <li class="radical radical-image radical-76 available" data-radical="76" data-radk="邦">⻏</li>
+  <li class="radical radical-image radical-77 available" data-radical="77" data-radk="阡">⻖</li>
+  <li class="radical available" data-radical="78">也</li>
+  <li class="radical available" data-radical="79">亡</li>
+  <li class="radical available" data-radical="80">及</li>
+  <li class="radical available" data-radical="81">久</li>
+  <li class="number">4</li>
+  <li class="radical radical-image radical-82 available" data-radical="82" data-radk="老">⺹</li>
+  <li class="radical available" data-radical="83">心</li>
+  <li class="radical available" data-radical="84">戈</li>
+  <li class="radical available" data-radical="85">戸</li>
+  <li class="radical available" data-radical="86">手</li>
+  <li class="radical available" data-radical="87">支</li>
+  <li class="radical available" data-radical="88">攵</li>
+  <li class="radical available" data-radical="89">文</li>
+  <li class="radical available" data-radical="90">斗</li>
+  <li class="radical available" data-radical="91">斤</li>
+  <li class="radical available" data-radical="92">方</li>
+  <li class="radical available" data-radical="93">无</li>
+  <li class="radical available" data-radical="94">日</li>
+  <li class="radical available" data-radical="95">曰</li>
+  <li class="radical available" data-radical="96">月</li>
+  <li class="radical available" data-radical="97">木</li>
+  <li class="radical available" data-radical="98">欠</li>
+  <li class="radical available" data-radical="99">止</li>
+  <li class="radical available" data-radical="100">歹</li>
+  <li class="radical available" data-radical="101">殳</li>
+  <li class="radical available" data-radical="102">比</li>
+  <li class="radical available" data-radical="103">毛</li>
+  <li class="radical available" data-radical="104">氏</li>
+  <li class="radical available" data-radical="105">气</li>
+  <li class="radical available" data-radical="106">水</li>
+  <li class="radical available" data-radical="107">火</li>
+  <li class="radical radical-image radical-108 available" data-radical="108" data-radk="杰">⺣</li>
+  <li class="radical available" data-radical="109">爪</li>
+  <li class="radical available" data-radical="110">父</li>
+  <li class="radical available" data-radical="111">爻</li>
+  <li class="radical available" data-radical="112">爿</li>
+  <li class="radical available" data-radical="113">片</li>
+  <li class="radical available" data-radical="114">牛</li>
+  <li class="radical available" data-radical="115">犬</li>
+  <li class="radical radical-image radical-116 available" data-radical="116" data-radk="礼">⺭</li>
+  <li class="radical available" data-radical="117">王</li>
+  <li class="radical available" data-radical="118">元</li>
+  <li class="radical available" data-radical="119">井</li>
+  <li class="radical available" data-radical="120">勿</li>
+  <li class="radical available" data-radical="121">尤</li>
+  <li class="radical available" data-radical="122">五</li>
+  <li class="radical available" data-radical="123">屯</li>
+  <li class="radical available" data-radical="124">巴</li>
+  <li class="radical available" data-radical="125">毋</li>
+  <li class="number">5</li>
+  <li class="radical available" data-radical="126">玄</li>
+  <li class="radical available" data-radical="127">瓦</li>
+  <li class="radical available" data-radical="128">甘</li>
+  <li class="radical available" data-radical="129">生</li>
+  <li class="radical available" data-radical="130">用</li>
+  <li class="radical available" data-radical="131">田</li>
+  <li class="radical available" data-radical="132">疋</li>
+  <li class="radical radical-image radical-133 available" data-radical="133" data-radk="疔">疒</li>
+  <li class="radical available" data-radical="134">癶</li>
+  <li class="radical available" data-radical="135">白</li>
+  <li class="radical available" data-radical="136">皮</li>
+  <li class="radical available" data-radical="137">皿</li>
+  <li class="radical available" data-radical="138">目</li>
+  <li class="radical available" data-radical="139">矛</li>
+  <li class="radical available" data-radical="140">矢</li>
+  <li class="radical available" data-radical="141">石</li>
+  <li class="radical available" data-radical="142">示</li>
+  <li class="radical radical-image radical-143 available" data-radical="143" data-radk="禹">禸</li>
+  <li class="radical available" data-radical="144">禾</li>
+  <li class="radical available" data-radical="145">穴</li>
+  <li class="radical available" data-radical="146">立</li>
+  <li class="radical radical-image radical-147 available" data-radical="147" data-radk="初">⻂</li>
+  <li class="radical available" data-radical="148">世</li>
+  <li class="radical available" data-radical="149">巨</li>
+  <li class="radical available" data-radical="150">冊</li>
+  <li class="radical available" data-radical="151">母</li>
+  <li class="radical radical-image radical-152 available" data-radical="152" data-radk="買">⺲</li>
+  <li class="radical available" data-radical="153">牙</li>
+  <li class="number">6</li>
+  <li class="radical available" data-radical="154">瓜</li>
+  <li class="radical available" data-radical="155">竹</li>
+  <li class="radical available" data-radical="156">米</li>
+  <li class="radical available" data-radical="157">糸</li>
+  <li class="radical available" data-radical="158">缶</li>
+  <li class="radical available" data-radical="159">羊</li>
+  <li class="radical available" data-radical="160">羽</li>
+  <li class="radical available" data-radical="161">而</li>
+  <li class="radical available" data-radical="162">耒</li>
+  <li class="radical available" data-radical="163">耳</li>
+  <li class="radical available" data-radical="164">聿</li>
+  <li class="radical available" data-radical="165">肉</li>
+  <li class="radical available" data-radical="166">自</li>
+  <li class="radical available" data-radical="167">至</li>
+  <li class="radical available" data-radical="168">臼</li>
+  <li class="radical available" data-radical="169">舌</li>
+  <li class="radical available" data-radical="170">舟</li>
+  <li class="radical available" data-radical="171">艮</li>
+  <li class="radical available" data-radical="172">色</li>
+  <li class="radical available" data-radical="173">虍</li>
+  <li class="radical available" data-radical="174">虫</li>
+  <li class="radical available" data-radical="175">血</li>
+  <li class="radical available" data-radical="176">行</li>
+  <li class="radical available" data-radical="177">衣</li>
+  <li class="radical available" data-radical="178">西</li>
+  <li class="number">7</li>
+  <li class="radical available" data-radical="179">臣</li>
+  <li class="radical available" data-radical="180">見</li>
+  <li class="radical available" data-radical="181">角</li>
+  <li class="radical available" data-radical="182">言</li>
+  <li class="radical available" data-radical="183">谷</li>
+  <li class="radical available" data-radical="184">豆</li>
+  <li class="radical available" data-radical="185">豕</li>
+  <li class="radical available" data-radical="186">豸</li>
+  <li class="radical available" data-radical="187">貝</li>
+  <li class="radical available" data-radical="188">赤</li>
+  <li class="radical available" data-radical="189">走</li>
+  <li class="radical available" data-radical="190">足</li>
+  <li class="radical available" data-radical="191">身</li>
+  <li class="radical available" data-radical="192">車</li>
+  <li class="radical available" data-radical="193">辛</li>
+  <li class="radical available" data-radical="194">辰</li>
+  <li class="radical available" data-radical="195">酉</li>
+  <li class="radical available" data-radical="196">釆</li>
+  <li class="radical available" data-radical="197">里</li>
+  <li class="radical available" data-radical="198">舛</li>
+  <li class="radical available" data-radical="199">麦</li>
+  <li class="number">8</li>
+  <li class="radical available" data-radical="200">金</li>
+  <li class="radical available" data-radical="201">長</li>
+  <li class="radical available" data-radical="202">門</li>
+  <li class="radical available" data-radical="203">隶</li>
+  <li class="radical available" data-radical="204">隹</li>
+  <li class="radical available" data-radical="205">雨</li>
+  <li class="radical available" data-radical="206">青</li>
+  <li class="radical available" data-radical="207">非</li>
+  <li class="radical available" data-radical="208">奄</li>
+  <li class="radical available" data-radical="209">岡</li>
+  <li class="radical available" data-radical="210">免</li>
+  <li class="radical available" data-radical="211">斉</li>
+  <li class="number">9</li>
+  <li class="radical available" data-radical="212">面</li>
+  <li class="radical available" data-radical="213">革</li>
+  <li class="radical available" data-radical="214">韭</li>
+  <li class="radical available" data-radical="215">音</li>
+  <li class="radical available" data-radical="216">頁</li>
+  <li class="radical available" data-radical="217">風</li>
+  <li class="radical available" data-radical="218">飛</li>
+  <li class="radical available" data-radical="219">食</li>
+  <li class="radical available" data-radical="220">首</li>
+  <li class="radical available" data-radical="221">香</li>
+  <li class="radical available" data-radical="222">品</li>
+  <li class="number">10</li>
+  <li class="radical available" data-radical="223">馬</li>
+  <li class="radical available" data-radical="224">骨</li>
+  <li class="radical available" data-radical="225">高</li>
+  <li class="radical available" data-radical="226">髟</li>
+  <li class="radical available" data-radical="227">鬥</li>
+  <li class="radical available" data-radical="228">鬯</li>
+  <li class="radical available" data-radical="229">鬲</li>
+  <li class="radical available" data-radical="230">鬼</li>
+  <li class="radical available" data-radical="231">竜</li>
+  <li class="radical available" data-radical="232">韋</li>
+  <li class="number">11</li>
+  <li class="radical available" data-radical="233">魚</li>
+  <li class="radical available" data-radical="234">鳥</li>
+  <li class="radical available" data-radical="235">鹵</li>
+  <li class="radical available" data-radical="236">鹿</li>
+  <li class="radical available" data-radical="237">麻</li>
+  <li class="radical available" data-radical="238">亀</li>
+  <li class="radical radical-image radical-239 available" data-radical="239" data-radk="滴">啇</li>
+  <li class="radical available" data-radical="240">黄</li>
+  <li class="radical available" data-radical="241">黒</li>
+  <li class="number">12</li>
+  <li class="radical available" data-radical="242">黍</li>
+  <li class="radical available" data-radical="243">黹</li>
+  <li class="radical available" data-radical="244">無</li>
+  <li class="radical available" data-radical="245">歯</li>
+  <li class="number">13</li>
+  <li class="radical available" data-radical="246">黽</li>
+  <li class="radical available" data-radical="247">鼎</li>
+  <li class="radical available" data-radical="248">鼓</li>
+  <li class="radical available" data-radical="249">鼠</li>
+  <li class="number">14</li>
+  <li class="radical available" data-radical="250">鼻</li>
+  <li class="radical available" data-radical="251">齊</li>
+  <li class="number">17</li>
+  <li class="radical available" data-radical="252">龠</li>
+</ul>
+
+</div>
+
+        <div id="handwriting_area" class="area handwriting" data-url="/handwriting" style="display: none;">
+  <div class="results_wrapper">
+  <div class="results">
+    <div class="list">
+      <div class="instructions">
+        <div class="vertical-bottom">
+          <div class="vertical-bottom-inner">
+            
+    <div class="arrow">▾</div>
+    <div class="text">Input kanji by handwriting. Just start drawing!</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="show_more">More</div>
+    <div class="show_less link">Less</div>
+  </div>
+  <div class="scroll_indicator show-for-small-only"></div>
+</div>
+  <div class="inputs" style="max-height: 275px;">
+    <div class="panel disablePanZoomInIE">
+  <canvas style="width: 310px; height: 275px;" width="387" height="343"></canvas>
+  <svg viewBox="0 0 30 30" class="icon pencil-icon ">
+  <use xlink:href="https://jisho.org/assets/icons-ab7975eb6f8bb532f99ba2d769be43c5431dec4c0e4d220df7367f1d954d9424.svg#pencil"></use>
+</svg>
+
+  <div class="buttons">
+    <button type="button" class="tiny reset button" disabled="disabled">Clear</button>
+    <button type="button" class="tiny back button" disabled="disabled">Back</button>
+  </div>
+</div>
+
+    <div class="panel disablePanZoomInIE">
+  <canvas style="width: 310px; height: 275px;" width="387" height="343"></canvas>
+  <svg viewBox="0 0 30 30" class="icon pencil-icon ">
+  <use xlink:href="https://jisho.org/assets/icons-ab7975eb6f8bb532f99ba2d769be43c5431dec4c0e4d220df7367f1d954d9424.svg#pencil"></use>
+</svg>
+
+  <div class="buttons">
+    <button type="button" class="tiny reset button" disabled="disabled">Clear</button>
+    <button type="button" class="tiny back button" disabled="disabled">Back</button>
+  </div>
+</div>
+
+  </div>
+</div>
+
+        <div id="speech_area" class="area speech" style="display: none;">
+
+  <div class="speech_results"></div>
+
+  <div class="explanation">
+    <div class="arrow">▴</div>
+    <div class="text">
+      Speak! You can use words like "back", "clear", "stop", "input", or
+ "search".  At any time say "Japanese" to switch to Japanese (requires 
+permissions again).
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button class="tiny english">English</button>
+    <button class="tiny japanese">Japanese</button>
+  </div>
+</div>
+
+        <div id="advanced_area" class="hidden area advanced">
+  <div class="filters">
+  <ul class="button-group radius" data-filter-group="type">
+    <li><a accesskey="a" class="filter small button" data-filter="type-all" href="https://jisho.org/search/%E5%8A%87%E8%8E%B7%E7%94%BB%20%23kanji">All</a></li>
+    <li><a accesskey="w" class="filter small button" data-filter="words" href="https://jisho.org/search/%E5%8A%87%E8%8E%B7%E7%94%BB%20%23kanji">Words</a></li>
+    <li><a accesskey="k" class="filter small button active" data-filter="kanji" href="https://jisho.org/search/%E5%8A%87%E8%8E%B7%E7%94%BB%20%23kanji">Kanji</a></li>
+    <li><a accesskey="s" class="filter small button" data-filter="sentences" href="https://jisho.org/search/%E5%8A%87%E8%8E%B7%E7%94%BB%20%23kanji">Sentences</a></li>
+    <li><a accesskey="n" class="filter small button" data-filter="names" href="https://jisho.org/search/%E5%8A%87%E8%8E%B7%E7%94%BB%20%23kanji">Names</a></li>
+  </ul>
+    <ul class="button-group radius" data-filter-group="level">
+      <li><a class="filter small button active" data-filter="level-all" href="https://jisho.org/search/%E5%8A%87%E8%8E%B7%E7%94%BB%20%23kanji">All</a></li>
+      <li><a class="filter small button" data-filter="jlpt-n1" href="https://jisho.org/search/%E5%8A%87%E8%8E%B7%E7%94%BB%20%23kanji">JLPT N1</a></li>
+      <li><a class="filter small button" data-filter="jlpt-n2" href="https://jisho.org/search/%E5%8A%87%E8%8E%B7%E7%94%BB%20%23kanji">JLPT N2</a></li>
+      <li><a class="filter small button" data-filter="jlpt-n3" href="https://jisho.org/search/%E5%8A%87%E8%8E%B7%E7%94%BB%20%23kanji">JLPT N3</a></li>
+      <li><a class="filter small button" data-filter="jlpt-n4" href="https://jisho.org/search/%E5%8A%87%E8%8E%B7%E7%94%BB%20%23kanji">JLPT N4</a></li>
+      <li><a class="filter small button" data-filter="jlpt-n5" href="https://jisho.org/search/%E5%8A%87%E8%8E%B7%E7%94%BB%20%23kanji">JLPT N5</a></li>
+    </ul>
+  <p>
+    Read the <a href="https://jisho.org/docs">advanced search options documentation</a> for a full list of available search options.
+  </p>
+</div>
+
+</div>
+
+      </div>
+    </div>
+  </div>
+
+</form>
+      </div>
+    </div>
+    <div id="inflection_modal" class="reveal-modal small" data-reveal="">
+      <div class="modal_content"></div>
+      <a class="close-reveal-modal">×</a>
+    </div>
+    <div id="page_container" class="row">
+      <div class="large-12 columns">
+        
+        
+
+<div id="main_results">
+  <div id="result_area">
+
+
+
+
+        <div class="kanji details">
+  <div class="row">
+    <div class="small-12 large-2 columns" data-area="">
+      <div class="row">
+        <div class="large-12 columns">
+          <h1 class="character" data-area-name="print" lang="ja">劇</h1>
+        </div>
+        <div class="large-12 columns">
+          <div class="kanji-details__stroke_count">
+            <strong>15</strong> strokes
+          </div>
+          
+<div class="radicals">
+    <dl class="dictionary_entry on_yomi">
+      <dt>Radical:</dt>
+      <dd>
+        <span title="KangXi radical 18. Also listed as 丿 (slash, 4) in the “classic” Nelson kanji dictionary.">
+            <span class="radical_meaning">
+              knife, sword
+            </span>
+
+          刀 (刂)
+        </span>
+      </dd>
+    </dl>
+</div>
+
+
+          
+<div class="radicals">
+  <dl class="dictionary_entry on_yomi">
+    <dt>Parts:</dt>
+    <dd>
+        <a href="https://jisho.org/search/%E5%88%88%20%23kanji">刈</a>
+        <a href="https://jisho.org/search/%E5%8C%95%20%23kanji">匕</a>
+        <a href="https://jisho.org/search/%E5%8D%9C%20%23kanji">卜</a>
+        <a href="https://jisho.org/search/%E5%8E%82%20%23kanji">厂</a>
+        <a href="https://jisho.org/search/%E8%99%8D%20%23kanji">虍</a>
+        <a href="https://jisho.org/search/%E8%B1%95%20%23kanji">豕</a>
+    </dd>
+  </dl>
+</div>
+
+
+          
+        </div>
+      </div>
+    </div>
+    <div class="small-12 large-10 columns">
+      <div class="row kanji-details--section">
+  <div class="small-12 large-7 columns kanji-details__main">
+    <div class="kanji-details__main-meanings">
+      drama, play
+    </div>
+    <div class="kanji-details__main-readings">
+
+        <dl class="dictionary_entry on_yomi">
+          <dt>On:</dt>
+          <dd class="kanji-details__main-readings-list" lang="ja">
+            <a href="https://jisho.org/search/%E5%8A%87%20%E3%81%92%E3%81%8D">ゲキ</a>
+          </dd>
+        </dl>
+    </div>
+  </div>
+  <div class="small-12 large-5 columns">
+    <div class="kanji_stats">
+    <div class="grade">
+      Jōyō kanji, taught in <strong>grade 6</strong>
+    </div>
+
+    <div class="jlpt">
+      JLPT level <strong>N2</strong>
+    </div>
+
+    <div class="frequency">
+      <strong>662</strong> of 2500 most used kanji in newspapers
+    </div>
+</div>
+
+  </div>
+</div>
+
+      <ul class="inline-list">
+  <li><a href="https://jisho.org/search/%E5%8A%87">Words starting with 劇</a></li>
+  <li><a href="https://jisho.org/search/*%E5%8A%87">Words ending with 劇</a></li>
+  <li><a href="https://jisho.org/search/*%E5%8A%87*">Words containing 劇</a></li>
+  <li><a href="#" data-dropdown="kanji_5186627cd5dda796580002d2_links" data-options="is_hover:true; hover_timeout:300" aria-expanded="false">External links</a></li>
+</ul>
+
+<ul id="kanji_5186627cd5dda796580002d2_links" class="f-dropdown" data-dropdown-content="" style="position: absolute; left: -99999px; top: 113px;" aria-hidden="true">
+  <li><a href="http://www.unicode.org/cgi-bin/GetUnihanData.pl?codepoint=%E5%8A%87&amp;useutf8=true" class="external">Unihan database</a></li>
+  <li><a href="http://en.wiktionary.org/wiki/%E5%8A%87" class="external">Wiktionary</a></li>
+  <li><a href="http://www.google.com/search?ie=utf8&amp;oe=utf8&amp;lr=lang_ja&amp;q=%E5%8A%87" class="external">Google</a></li>
+  <li><a href="https://www.google.com/search?tbm=isch&amp;q=%E5%8A%87" class="external">Google image search</a></li>
+</ul>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 large-2 columns" data-area="">
+      <div class="row">
+        <div class="small-12 columns">
+            <div id="kanji_strokes_5186627cd5dda796580002d2" class="kanji_strokes loaded" data-area-name="brush">
+    <button class="kanji_play_button">
+      <svg viewBox="0 0 30 30" class="icon play-circle-icon ">
+  <use xlink:href="https://jisho.org/assets/icons-ab7975eb6f8bb532f99ba2d769be43c5431dec4c0e4d220df7367f1d954d9424.svg#play-circle"></use>
+</svg>
+
+    </button>
+    <div class="stage">
+      <canvas style="width: 140px; height: 140px;" width="175" height="175"></canvas>
+    <map id="image_map_1" name="image_map_1"><area shape="poly" coords="37.2930041273477,17.97981742365622,38.61606380468574,20.794823065360852,38.54496898370177,36.58596993014257,64.23301266767436,36.62503924416935,64.21329399347938,18.6363695951896,61.65745458824863,9.840366062582309"><area shape="poly" coords="54.61220017883605,37.78553565686992,70.9273635363282,35.43497500083043,74.80838860906853,35.637981681288096,75.46684074872961,9.958348593941253,68.32768233523142,9.878786467059467,50.9657814725401,12.357583609185118"><area shape="poly" coords="15.12920884484076,46.03232885861483,15.918129935265021,42.85232140529279,0.6440671662621141,111.06982985681894,25.711896136490175,116.68062885877735,41.135081073909284,47.74951345709251,39.278130604700515,37.274093159733766"><area shape="poly" coords="31.59869763883777,55.775419895281566,37.26435488057864,54.70172517436821,72.03181047349428,47.52643440242917,59.66250209992314,44.26074161970906,85.32098413860892,45.493386820657896,73.92782255402864,21.90842798289194,32.401700165292915,29.47809133939327,26.815981260244786,30.53650671022302"><area shape="poly" coords="34.890917943086606,67.45513069768681,42.80013311953372,67.08524903395606,64.71977518315977,61.34506183399791,68.89123631733348,60.95160745098014,65.97114900376742,35.43004392516665,58.91692206454663,36.32099321187364,37.449408164869936,41.96062252567695,34.46688022205101,41.77055737570769"><area shape="poly" coords="35.74706382458751,45.969751985276474,36.078122124271204,45.55289659293283,37.617702034225566,60.49464647708646,54.29704091750111,71.9272680945718,68.10880641640875,71.23057787552119,65.49486330836186,45.67584414282742,60.220390275159424,46.93144750175846,59.99697686485699,47.88333517428969,61.69068521517832,43.584718085966244,59.9410095699079,37.33667003307214"><area shape="poly" coords="35.07184968308871,84.10562014055681,41.998214010438815,84.15993423996854,67.06150573349132,79.64231019627142,71.63250428236874,79.41557542010118,70.03722048827343,53.77708513035752,63.04858600962794,54.269616409233144,38.27701534735934,58.74281805360943,36.08411361966357,58.437499125498206"><area shape="poly" coords="39.1989087779366,68.15887821664852,41.861059821174976,65.94702649494297,24.976104441541924,77.56860114901203,39.57802399882504,98.7029584840155,58.01416953662318,85.9208634133139,63.09099947894411,77.59525022371844"><area shape="poly" coords="36.53153366401714,83.18736829746355,45.36573671314542,123.13139317362779,49.44408598978073,110.2019605949964,49.55774887260454,135.88978252426963,71.05261191070778,122.88328572545481,61.648282849744334,77.79978766583918"><area shape="poly" coords="38.48566916260326,82.63887279585951,42.06326440175294,78.94760663861919,19.882781964210107,94.33994272541209,34.550245558725685,115.42886461403742,58.09453376338466,99.019365838445,63.290477626387556,89.31709050689275"><area shape="poly" coords="43.77018291696453,91.23684936050549,45.880102308510644,90.18030130364077,19.00210832438266,108.72928386533486,33.607065987543955,129.8615418227385,61.70154906763612,110.41786383397388,67.22798222065013,101.70626990554955"><area shape="poly" coords="60.69426064785276,71.01984509417481,62.676984377765784,68.75421837526467,51.92154149076762,79.07486596381928,69.76286217895714,97.55632669673113,81.99824498003235,85.6824788724417,85.52225311361512,77.61134756637561"><area shape="poly" coords="53.42225351497472,99.96025601677879,73.17638195534168,116.97860464063196,89.94288409970416,97.51680820340471,70.18875565933718,80.49845957955151"><area shape="poly" coords="80.21293799626191,40.72643901185664,81.61844649219505,42.5930702647278,81.66238762382063,77.37763003932466,81.5734287285485,84.61429157839926,107.25959879438722,84.92699282527046,107.35045641287658,77.39301216251016,107.2659571775297,41.15004900132723,104.15036475603162,31.405671079886456"><area shape="poly" coords="101.25362081025399,22.01278807904125,102.79435447436853,24.51206609419715,102.87685643027592,112.04055556952704,104.06635640265297,101.11354433901822,104.80336836798921,126.79104281694504,128.36718026697176,115.22182975157384,128.4753702962736,23.9099522544267,125.49500304295698,13.5138174255459"></map><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" ismap="ismap" usemap="#image_map_1" style="top: 0px; left: 0px; position: absolute; width: 150px; height: 150px;"></div>
+    <div class="buttons">
+      <svg viewBox="0 0 30 30" class="icon play-icon replay_button">
+  <use xlink:href="https://jisho.org/assets/icons-ab7975eb6f8bb532f99ba2d769be43c5431dec4c0e4d220df7367f1d954d9424.svg#play"></use>
+</svg>
+
+      <svg viewBox="0 0 30 30" class="icon settings-icon toggle_kanji_actions">
+  <use xlink:href="https://jisho.org/assets/icons-ab7975eb6f8bb532f99ba2d769be43c5431dec4c0e4d220df7367f1d954d9424.svg#settings"></use>
+</svg>
+
+    </div>
+    <div class="actions">
+      <div class="vertical-middle">
+        <div class="vertical-middle-inner">
+          <div class="slider">
+            <h3>Speed</h3>
+            <div class="slider speed_slider noUi-target"><div class="noUi-base noUi-background noUi-horizontal"><div class="noUi-origin noUi-origin-lower" style="left: 44.4444%;"><div class="noUi-handle noUi-handle-lower"></div></div></div></div>
+          </div>
+        </div>
+      </div>
+      <!--
+      <h3>Thickness</h3>
+      <div class="slider thickness_slider"></div>
+      -->
+      <button class="ok_button tiny secondary">Done</button>
+    </div>
+  </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="small-12 large-10 columns">
+      <div class="row">
+        <div class="small-12 columns">
+            <h2>Stroke order</h2>
+  <div class="stroke_order_diagram--outer_container">
+    <svg class="stroke_order_diagram--svg_container_for_5186627cd5dda796580002d2" style="height: 100px; width: 1500px;" viewBox="0 0 1500 100"><desc>Created with Snap</desc><defs></defs><line x1="1" x2="1499" y1="1" y2="1" class="stroke_order_diagram--bounding_box"></line><line x1="1" x2="1" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><line x1="1" x2="1499" y1="99" y2="99" class="stroke_order_diagram--bounding_box"></line><line x1="0" x2="1500" y1="50" y2="50" class="stroke_order_diagram--guide_line"></line><line x1="50" x2="50" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line><line x1="99" x2="99" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><path id="kvg:05287-s1" type="㇑a" d="M38.52,10.83c0.98,0.92,1.51,2.42,1.51,4.52c0,5.9-0.02,8.19-0.02,13.15" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,-4,-4)" class="stroke_order_diagram--current_path"></path><path id="Sl9lrs5abo" type="㇑a" d="M38.52,10.83c0.98,0.92,1.51,2.42,1.51,4.52c0,5.9-0.02,8.19-0.02,13.15" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,-4,-4)" class="stroke_order_diagram--current_path"></path><circle cx="38.52" cy="10.83" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,-4,-4)"></circle><line x1="150" x2="150" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line><line x1="199" x2="199" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><path id="Sl9lrs5abr" type="㇑a" d="M38.52,10.83c0.98,0.92,1.51,2.42,1.51,4.52c0,5.9-0.02,8.19-0.02,13.15" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,96,-4)" class="stroke_order_diagram--existing_path"></path><path id="kvg:05287-s2" type="㇐b" d="M41.1,19.52c6.65-0.77,9.65-1.27,13.11-1.88c1.09-0.19,3.04-0.14,4.29,0.11" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,96,-4)" class="stroke_order_diagram--current_path"></path><path id="Sl9lrs5abt" type="㇐b" d="M41.1,19.52c6.65-0.77,9.65-1.27,13.11-1.88c1.09-0.19,3.04-0.14,4.29,0.11" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,96,-4)" class="stroke_order_diagram--current_path"></path><circle cx="41.1" cy="19.52" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,96,-4)"></circle><line x1="250" x2="250" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line><line x1="299" x2="299" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><path id="Sl9lrs5abw" type="㇑a" d="M38.52,10.83c0.98,0.92,1.51,2.42,1.51,4.52c0,5.9-0.02,8.19-0.02,13.15" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,196,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5abx" type="㇐b" d="M41.1,19.52c6.65-0.77,9.65-1.27,13.11-1.88c1.09-0.19,3.04-0.14,4.29,0.11" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,196,-4)" class="stroke_order_diagram--existing_path"></path><path id="kvg:05287-s3" type="㇒" d="M21.18,32.43c0.7,0.7,1.03,1.7,1.03,2.84c0,22.48-2.95,40.98-11.95,53.39" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,196,-4)" class="stroke_order_diagram--current_path"></path><path id="Sl9lrs5abz" type="㇒" d="M21.18,32.43c0.7,0.7,1.03,1.7,1.03,2.84c0,22.48-2.95,40.98-11.95,53.39" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,196,-4)" class="stroke_order_diagram--current_path"></path><circle cx="21.18" cy="32.43" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,196,-4)"></circle><line x1="350" x2="350" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line><line x1="399" x2="399" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><path id="Sl9lrs5ab12" type="㇑a" d="M38.52,10.83c0.98,0.92,1.51,2.42,1.51,4.52c0,5.9-0.02,8.19-0.02,13.15" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,296,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab13" type="㇐b" d="M41.1,19.52c6.65-0.77,9.65-1.27,13.11-1.88c1.09-0.19,3.04-0.14,4.29,0.11" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,296,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab14" type="㇒" d="M21.18,32.43c0.7,0.7,1.03,1.7,1.03,2.84c0,22.48-2.95,40.98-11.95,53.39" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,296,-4)" class="stroke_order_diagram--existing_path"></path><path id="kvg:05287-s4" type="㇖a" d="M22.74,33.6c1.76-0.22,2.82-0.4,4.38-0.83c9.13-2.51,23.13-5.51,29.7-5.74c10.29-0.36,2.18,6.11-0.38,7.91" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,296,-4)" class="stroke_order_diagram--current_path"></path><path id="Sl9lrs5ab16" type="㇖a" d="M22.74,33.6c1.76-0.22,2.82-0.4,4.38-0.83c9.13-2.51,23.13-5.51,29.7-5.74c10.29-0.36,2.18,6.11-0.38,7.91" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,296,-4)" class="stroke_order_diagram--current_path"></path><circle cx="22.74" cy="33.6" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,296,-4)"></circle><line x1="450" x2="450" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line><line x1="499" x2="499" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><path id="Sl9lrs5ab19" type="㇑a" d="M38.52,10.83c0.98,0.92,1.51,2.42,1.51,4.52c0,5.9-0.02,8.19-0.02,13.15" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,396,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab1a" type="㇐b" d="M41.1,19.52c6.65-0.77,9.65-1.27,13.11-1.88c1.09-0.19,3.04-0.14,4.29,0.11" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,396,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab1b" type="㇒" d="M21.18,32.43c0.7,0.7,1.03,1.7,1.03,2.84c0,22.48-2.95,40.98-11.95,53.39" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,396,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab1c" type="㇖a" d="M22.74,33.6c1.76-0.22,2.82-0.4,4.38-0.83c9.13-2.51,23.13-5.51,29.7-5.74c10.29-0.36,2.18,6.11-0.38,7.91" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,396,-4)" class="stroke_order_diagram--existing_path"></path><path id="kvg:05287-s5" type="㇐" d="M27,42.52c1.3,0.43,2.96,0.15,4.24-0.07c4.96-0.84,11.52-3.18,16.89-4.43c1.62-0.38,2.62-0.64,4.37-0.5" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,396,-4)" class="stroke_order_diagram--current_path"></path><path id="Sl9lrs5ab1e" type="㇐" d="M27,42.52c1.3,0.43,2.96,0.15,4.24-0.07c4.96-0.84,11.52-3.18,16.89-4.43c1.62-0.38,2.62-0.64,4.37-0.5" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,396,-4)" class="stroke_order_diagram--current_path"></path><circle cx="27" cy="42.52" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,396,-4)"></circle><line x1="550" x2="550" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line><line x1="599" x2="599" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><path id="Sl9lrs5ab1h" type="㇑a" d="M38.52,10.83c0.98,0.92,1.51,2.42,1.51,4.52c0,5.9-0.02,8.19-0.02,13.15" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,496,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab1i" type="㇐b" d="M41.1,19.52c6.65-0.77,9.65-1.27,13.11-1.88c1.09-0.19,3.04-0.14,4.29,0.11" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,496,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab1j" type="㇒" d="M21.18,32.43c0.7,0.7,1.03,1.7,1.03,2.84c0,22.48-2.95,40.98-11.95,53.39" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,496,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab1k" type="㇖a" d="M22.74,33.6c1.76-0.22,2.82-0.4,4.38-0.83c9.13-2.51,23.13-5.51,29.7-5.74c10.29-0.36,2.18,6.11-0.38,7.91" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,496,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab1l" type="㇐" d="M27,42.52c1.3,0.43,2.96,0.15,4.24-0.07c4.96-0.84,11.52-3.18,16.89-4.43c1.62-0.38,2.62-0.64,4.37-0.5" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,496,-4)" class="stroke_order_diagram--existing_path"></path><path id="kvg:05287-s6" type="㇟a" d="M37.25,32.43c0.54,0.54,0.81,1.57,0.81,2.27c0,2.8-0.06,4.55-0.06,7.49c0,3.19,0.88,4.08,6.58,4.08c1.85,0,5.84-0.25,7.43-0.76" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,496,-4)" class="stroke_order_diagram--current_path"></path><path id="Sl9lrs5ab1n" type="㇟a" d="M37.25,32.43c0.54,0.54,0.81,1.57,0.81,2.27c0,2.8-0.06,4.55-0.06,7.49c0,3.19,0.88,4.08,6.58,4.08c1.85,0,5.84-0.25,7.43-0.76" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,496,-4)" class="stroke_order_diagram--current_path"></path><circle cx="37.25" cy="32.43" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,496,-4)"></circle><line x1="650" x2="650" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line><line x1="699" x2="699" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><path id="Sl9lrs5ab1q" type="㇑a" d="M38.52,10.83c0.98,0.92,1.51,2.42,1.51,4.52c0,5.9-0.02,8.19-0.02,13.15" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,596,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab1r" type="㇐b" d="M41.1,19.52c6.65-0.77,9.65-1.27,13.11-1.88c1.09-0.19,3.04-0.14,4.29,0.11" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,596,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab1s" type="㇒" d="M21.18,32.43c0.7,0.7,1.03,1.7,1.03,2.84c0,22.48-2.95,40.98-11.95,53.39" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,596,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab1t" type="㇖a" d="M22.74,33.6c1.76-0.22,2.82-0.4,4.38-0.83c9.13-2.51,23.13-5.51,29.7-5.74c10.29-0.36,2.18,6.11-0.38,7.91" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,596,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab1u" type="㇐" d="M27,42.52c1.3,0.43,2.96,0.15,4.24-0.07c4.96-0.84,11.52-3.18,16.89-4.43c1.62-0.38,2.62-0.64,4.37-0.5" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,596,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab1v" type="㇟a" d="M37.25,32.43c0.54,0.54,0.81,1.57,0.81,2.27c0,2.8-0.06,4.55-0.06,7.49c0,3.19,0.88,4.08,6.58,4.08c1.85,0,5.84-0.25,7.43-0.76" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,596,-4)" class="stroke_order_diagram--existing_path"></path><path id="kvg:05287-s7" type="㇐" d="M27.7,55.49c1.18,0.26,2.75,0.25,3.55,0.14c5.43-0.71,13.34-2.46,19.4-3.5c1.52-0.26,3.1-0.63,4.5-0.28" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,596,-4)" class="stroke_order_diagram--current_path"></path><path id="Sl9lrs5ab1x" type="㇐" d="M27.7,55.49c1.18,0.26,2.75,0.25,3.55,0.14c5.43-0.71,13.34-2.46,19.4-3.5c1.52-0.26,3.1-0.63,4.5-0.28" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,596,-4)" class="stroke_order_diagram--current_path"></path><circle cx="27.7" cy="55.49" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,596,-4)"></circle><line x1="750" x2="750" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line><line x1="799" x2="799" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><path id="Sl9lrs5ab20" type="㇑a" d="M38.52,10.83c0.98,0.92,1.51,2.42,1.51,4.52c0,5.9-0.02,8.19-0.02,13.15" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,696,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab21" type="㇐b" d="M41.1,19.52c6.65-0.77,9.65-1.27,13.11-1.88c1.09-0.19,3.04-0.14,4.29,0.11" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,696,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab22" type="㇒" d="M21.18,32.43c0.7,0.7,1.03,1.7,1.03,2.84c0,22.48-2.95,40.98-11.95,53.39" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,696,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab23" type="㇖a" d="M22.74,33.6c1.76-0.22,2.82-0.4,4.38-0.83c9.13-2.51,23.13-5.51,29.7-5.74c10.29-0.36,2.18,6.11-0.38,7.91" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,696,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab24" type="㇐" d="M27,42.52c1.3,0.43,2.96,0.15,4.24-0.07c4.96-0.84,11.52-3.18,16.89-4.43c1.62-0.38,2.62-0.64,4.37-0.5" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,696,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab25" type="㇟a" d="M37.25,32.43c0.54,0.54,0.81,1.57,0.81,2.27c0,2.8-0.06,4.55-0.06,7.49c0,3.19,0.88,4.08,6.58,4.08c1.85,0,5.84-0.25,7.43-0.76" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,696,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab26" type="㇐" d="M27.7,55.49c1.18,0.26,2.75,0.25,3.55,0.14c5.43-0.71,13.34-2.46,19.4-3.5c1.52-0.26,3.1-0.63,4.5-0.28" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,696,-4)" class="stroke_order_diagram--existing_path"></path><path id="kvg:05287-s8" type="㇒" d="M39.82,56.74c0.11,0.94-0.21,1.73-0.94,2.38c-2.06,2.41-6.85,6.15-13.75,9.5" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,696,-4)" class="stroke_order_diagram--current_path"></path><path id="Sl9lrs5ab28" type="㇒" d="M39.82,56.74c0.11,0.94-0.21,1.73-0.94,2.38c-2.06,2.41-6.85,6.15-13.75,9.5" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,696,-4)" class="stroke_order_diagram--current_path"></path><circle cx="39.82" cy="56.74" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,696,-4)"></circle><line x1="850" x2="850" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line><line x1="899" x2="899" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><path id="Sl9lrs5ab2b" type="㇑a" d="M38.52,10.83c0.98,0.92,1.51,2.42,1.51,4.52c0,5.9-0.02,8.19-0.02,13.15" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,796,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab2c" type="㇐b" d="M41.1,19.52c6.65-0.77,9.65-1.27,13.11-1.88c1.09-0.19,3.04-0.14,4.29,0.11" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,796,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab2d" type="㇒" d="M21.18,32.43c0.7,0.7,1.03,1.7,1.03,2.84c0,22.48-2.95,40.98-11.95,53.39" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,796,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab2e" type="㇖a" d="M22.74,33.6c1.76-0.22,2.82-0.4,4.38-0.83c9.13-2.51,23.13-5.51,29.7-5.74c10.29-0.36,2.18,6.11-0.38,7.91" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,796,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab2f" type="㇐" d="M27,42.52c1.3,0.43,2.96,0.15,4.24-0.07c4.96-0.84,11.52-3.18,16.89-4.43c1.62-0.38,2.62-0.64,4.37-0.5" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,796,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab2g" type="㇟a" d="M37.25,32.43c0.54,0.54,0.81,1.57,0.81,2.27c0,2.8-0.06,4.55-0.06,7.49c0,3.19,0.88,4.08,6.58,4.08c1.85,0,5.84-0.25,7.43-0.76" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,796,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab2h" type="㇐" d="M27.7,55.49c1.18,0.26,2.75,0.25,3.55,0.14c5.43-0.71,13.34-2.46,19.4-3.5c1.52-0.26,3.1-0.63,4.5-0.28" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,796,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab2i" type="㇒" d="M39.82,56.74c0.11,0.94-0.21,1.73-0.94,2.38c-2.06,2.41-6.85,6.15-13.75,9.5" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,796,-4)" class="stroke_order_diagram--existing_path"></path><path id="kvg:05287-s9" type="㇕v" d="M38.22,62.67c6.86,3.12,12.46,20.56,7.1,33.1c-1.6,3.76-5.93,0.63-6.78,0.03" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,796,-4)" class="stroke_order_diagram--current_path"></path><path id="Sl9lrs5ab2k" type="㇕v" d="M38.22,62.67c6.86,3.12,12.46,20.56,7.1,33.1c-1.6,3.76-5.93,0.63-6.78,0.03" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,796,-4)" class="stroke_order_diagram--current_path"></path><circle cx="38.22" cy="62.67" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,796,-4)"></circle><line x1="950" x2="950" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line><line x1="999" x2="999" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><path id="Sl9lrs5ab2n" type="㇑a" d="M38.52,10.83c0.98,0.92,1.51,2.42,1.51,4.52c0,5.9-0.02,8.19-0.02,13.15" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,896,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab2o" type="㇐b" d="M41.1,19.52c6.65-0.77,9.65-1.27,13.11-1.88c1.09-0.19,3.04-0.14,4.29,0.11" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,896,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab2p" type="㇒" d="M21.18,32.43c0.7,0.7,1.03,1.7,1.03,2.84c0,22.48-2.95,40.98-11.95,53.39" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,896,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab2q" type="㇖a" d="M22.74,33.6c1.76-0.22,2.82-0.4,4.38-0.83c9.13-2.51,23.13-5.51,29.7-5.74c10.29-0.36,2.18,6.11-0.38,7.91" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,896,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab2r" type="㇐" d="M27,42.52c1.3,0.43,2.96,0.15,4.24-0.07c4.96-0.84,11.52-3.18,16.89-4.43c1.62-0.38,2.62-0.64,4.37-0.5" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,896,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab2s" type="㇟a" d="M37.25,32.43c0.54,0.54,0.81,1.57,0.81,2.27c0,2.8-0.06,4.55-0.06,7.49c0,3.19,0.88,4.08,6.58,4.08c1.85,0,5.84-0.25,7.43-0.76" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,896,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab2t" type="㇐" d="M27.7,55.49c1.18,0.26,2.75,0.25,3.55,0.14c5.43-0.71,13.34-2.46,19.4-3.5c1.52-0.26,3.1-0.63,4.5-0.28" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,896,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab2u" type="㇒" d="M39.82,56.74c0.11,0.94-0.21,1.73-0.94,2.38c-2.06,2.41-6.85,6.15-13.75,9.5" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,896,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab2v" type="㇕v" d="M38.22,62.67c6.86,3.12,12.46,20.56,7.1,33.1c-1.6,3.76-5.93,0.63-6.78,0.03" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,896,-4)" class="stroke_order_diagram--existing_path"></path><path id="kvg:05287-s10" type="㇒" d="M39.62,66.94c0.13,0.88-0.03,1.71-0.63,2.34c-2.74,2.85-8.99,7.85-17.8,12.38" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,896,-4)" class="stroke_order_diagram--current_path"></path><path id="Sl9lrs5ab2x" type="㇒" d="M39.62,66.94c0.13,0.88-0.03,1.71-0.63,2.34c-2.74,2.85-8.99,7.85-17.8,12.38" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,896,-4)" class="stroke_order_diagram--current_path"></path><circle cx="39.62" cy="66.94" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,896,-4)"></circle><line x1="1050" x2="1050" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line><line x1="1099" x2="1099" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><path id="Sl9lrs5ab30" type="㇑a" d="M38.52,10.83c0.98,0.92,1.51,2.42,1.51,4.52c0,5.9-0.02,8.19-0.02,13.15" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,996,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab31" type="㇐b" d="M41.1,19.52c6.65-0.77,9.65-1.27,13.11-1.88c1.09-0.19,3.04-0.14,4.29,0.11" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,996,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab32" type="㇒" d="M21.18,32.43c0.7,0.7,1.03,1.7,1.03,2.84c0,22.48-2.95,40.98-11.95,53.39" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,996,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab33" type="㇖a" d="M22.74,33.6c1.76-0.22,2.82-0.4,4.38-0.83c9.13-2.51,23.13-5.51,29.7-5.74c10.29-0.36,2.18,6.11-0.38,7.91" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,996,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab34" type="㇐" d="M27,42.52c1.3,0.43,2.96,0.15,4.24-0.07c4.96-0.84,11.52-3.18,16.89-4.43c1.62-0.38,2.62-0.64,4.37-0.5" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,996,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab35" type="㇟a" d="M37.25,32.43c0.54,0.54,0.81,1.57,0.81,2.27c0,2.8-0.06,4.55-0.06,7.49c0,3.19,0.88,4.08,6.58,4.08c1.85,0,5.84-0.25,7.43-0.76" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,996,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab36" type="㇐" d="M27.7,55.49c1.18,0.26,2.75,0.25,3.55,0.14c5.43-0.71,13.34-2.46,19.4-3.5c1.52-0.26,3.1-0.63,4.5-0.28" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,996,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab37" type="㇒" d="M39.82,56.74c0.11,0.94-0.21,1.73-0.94,2.38c-2.06,2.41-6.85,6.15-13.75,9.5" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,996,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab38" type="㇕v" d="M38.22,62.67c6.86,3.12,12.46,20.56,7.1,33.1c-1.6,3.76-5.93,0.63-6.78,0.03" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,996,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab39" type="㇒" d="M39.62,66.94c0.13,0.88-0.03,1.71-0.63,2.34c-2.74,2.85-8.99,7.85-17.8,12.38" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,996,-4)" class="stroke_order_diagram--existing_path"></path><path id="kvg:05287-s11" type="㇒" d="M43.21,75.11c0.18,1.18-0.52,2.09-1.33,2.98c-3.64,4.02-10.03,8.93-21.4,14.79" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,996,-4)" class="stroke_order_diagram--current_path"></path><path id="Sl9lrs5ab3b" type="㇒" d="M43.21,75.11c0.18,1.18-0.52,2.09-1.33,2.98c-3.64,4.02-10.03,8.93-21.4,14.79" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,996,-4)" class="stroke_order_diagram--current_path"></path><circle cx="43.21" cy="75.11" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,996,-4)"></circle><line x1="1150" x2="1150" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line><line x1="1199" x2="1199" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><path id="Sl9lrs5ab3e" type="㇑a" d="M38.52,10.83c0.98,0.92,1.51,2.42,1.51,4.52c0,5.9-0.02,8.19-0.02,13.15" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1096,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab3f" type="㇐b" d="M41.1,19.52c6.65-0.77,9.65-1.27,13.11-1.88c1.09-0.19,3.04-0.14,4.29,0.11" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1096,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab3g" type="㇒" d="M21.18,32.43c0.7,0.7,1.03,1.7,1.03,2.84c0,22.48-2.95,40.98-11.95,53.39" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1096,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab3h" type="㇖a" d="M22.74,33.6c1.76-0.22,2.82-0.4,4.38-0.83c9.13-2.51,23.13-5.51,29.7-5.74c10.29-0.36,2.18,6.11-0.38,7.91" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1096,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab3i" type="㇐" d="M27,42.52c1.3,0.43,2.96,0.15,4.24-0.07c4.96-0.84,11.52-3.18,16.89-4.43c1.62-0.38,2.62-0.64,4.37-0.5" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1096,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab3j" type="㇟a" d="M37.25,32.43c0.54,0.54,0.81,1.57,0.81,2.27c0,2.8-0.06,4.55-0.06,7.49c0,3.19,0.88,4.08,6.58,4.08c1.85,0,5.84-0.25,7.43-0.76" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1096,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab3k" type="㇐" d="M27.7,55.49c1.18,0.26,2.75,0.25,3.55,0.14c5.43-0.71,13.34-2.46,19.4-3.5c1.52-0.26,3.1-0.63,4.5-0.28" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1096,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab3l" type="㇒" d="M39.82,56.74c0.11,0.94-0.21,1.73-0.94,2.38c-2.06,2.41-6.85,6.15-13.75,9.5" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1096,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab3m" type="㇕v" d="M38.22,62.67c6.86,3.12,12.46,20.56,7.1,33.1c-1.6,3.76-5.93,0.63-6.78,0.03" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1096,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab3n" type="㇒" d="M39.62,66.94c0.13,0.88-0.03,1.71-0.63,2.34c-2.74,2.85-8.99,7.85-17.8,12.38" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1096,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab3o" type="㇒" d="M43.21,75.11c0.18,1.18-0.52,2.09-1.33,2.98c-3.64,4.02-10.03,8.93-21.4,14.79" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1096,-4)" class="stroke_order_diagram--existing_path"></path><path id="kvg:05287-s12" type="㇒" d="M56.92,57.86c0.08,0.82-0.12,1.57-0.6,2.26c-1.34,2.43-4.66,6.19-8.95,8.64" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1096,-4)" class="stroke_order_diagram--current_path"></path><path id="Sl9lrs5ab3q" type="㇒" d="M56.92,57.86c0.08,0.82-0.12,1.57-0.6,2.26c-1.34,2.43-4.66,6.19-8.95,8.64" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1096,-4)" class="stroke_order_diagram--current_path"></path><circle cx="56.92" cy="57.86" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,1096,-4)"></circle><line x1="1250" x2="1250" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line><line x1="1299" x2="1299" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><path id="Sl9lrs5ab3t" type="㇑a" d="M38.52,10.83c0.98,0.92,1.51,2.42,1.51,4.52c0,5.9-0.02,8.19-0.02,13.15" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1196,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab3u" type="㇐b" d="M41.1,19.52c6.65-0.77,9.65-1.27,13.11-1.88c1.09-0.19,3.04-0.14,4.29,0.11" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1196,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab3v" type="㇒" d="M21.18,32.43c0.7,0.7,1.03,1.7,1.03,2.84c0,22.48-2.95,40.98-11.95,53.39" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1196,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab3w" type="㇖a" d="M22.74,33.6c1.76-0.22,2.82-0.4,4.38-0.83c9.13-2.51,23.13-5.51,29.7-5.74c10.29-0.36,2.18,6.11-0.38,7.91" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1196,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab3x" type="㇐" d="M27,42.52c1.3,0.43,2.96,0.15,4.24-0.07c4.96-0.84,11.52-3.18,16.89-4.43c1.62-0.38,2.62-0.64,4.37-0.5" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1196,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab3y" type="㇟a" d="M37.25,32.43c0.54,0.54,0.81,1.57,0.81,2.27c0,2.8-0.06,4.55-0.06,7.49c0,3.19,0.88,4.08,6.58,4.08c1.85,0,5.84-0.25,7.43-0.76" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1196,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab3z" type="㇐" d="M27.7,55.49c1.18,0.26,2.75,0.25,3.55,0.14c5.43-0.71,13.34-2.46,19.4-3.5c1.52-0.26,3.1-0.63,4.5-0.28" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1196,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab40" type="㇒" d="M39.82,56.74c0.11,0.94-0.21,1.73-0.94,2.38c-2.06,2.41-6.85,6.15-13.75,9.5" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1196,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab41" type="㇕v" d="M38.22,62.67c6.86,3.12,12.46,20.56,7.1,33.1c-1.6,3.76-5.93,0.63-6.78,0.03" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1196,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab42" type="㇒" d="M39.62,66.94c0.13,0.88-0.03,1.71-0.63,2.34c-2.74,2.85-8.99,7.85-17.8,12.38" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1196,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab43" type="㇒" d="M43.21,75.11c0.18,1.18-0.52,2.09-1.33,2.98c-3.64,4.02-10.03,8.93-21.4,14.79" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1196,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab44" type="㇒" d="M56.92,57.86c0.08,0.82-0.12,1.57-0.6,2.26c-1.34,2.43-4.66,6.19-8.95,8.64" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1196,-4)" class="stroke_order_diagram--existing_path"></path><path id="kvg:05287-s13" type="㇔/㇏" d="M48.12,70.25c4.85,2.06,12.17,7.17,15.38,13.25" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1196,-4)" class="stroke_order_diagram--current_path"></path><path id="Sl9lrs5ab46" type="㇔/㇏" d="M48.12,70.25c4.85,2.06,12.17,7.17,15.38,13.25" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1196,-4)" class="stroke_order_diagram--current_path"></path><circle cx="48.12" cy="70.25" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,1196,-4)"></circle><line x1="1350" x2="1350" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line><line x1="1399" x2="1399" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><path id="Sl9lrs5ab49" type="㇑a" d="M38.52,10.83c0.98,0.92,1.51,2.42,1.51,4.52c0,5.9-0.02,8.19-0.02,13.15" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1296,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab4a" type="㇐b" d="M41.1,19.52c6.65-0.77,9.65-1.27,13.11-1.88c1.09-0.19,3.04-0.14,4.29,0.11" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1296,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab4b" type="㇒" d="M21.18,32.43c0.7,0.7,1.03,1.7,1.03,2.84c0,22.48-2.95,40.98-11.95,53.39" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1296,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab4c" type="㇖a" d="M22.74,33.6c1.76-0.22,2.82-0.4,4.38-0.83c9.13-2.51,23.13-5.51,29.7-5.74c10.29-0.36,2.18,6.11-0.38,7.91" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1296,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab4d" type="㇐" d="M27,42.52c1.3,0.43,2.96,0.15,4.24-0.07c4.96-0.84,11.52-3.18,16.89-4.43c1.62-0.38,2.62-0.64,4.37-0.5" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1296,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab4e" type="㇟a" d="M37.25,32.43c0.54,0.54,0.81,1.57,0.81,2.27c0,2.8-0.06,4.55-0.06,7.49c0,3.19,0.88,4.08,6.58,4.08c1.85,0,5.84-0.25,7.43-0.76" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1296,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab4f" type="㇐" d="M27.7,55.49c1.18,0.26,2.75,0.25,3.55,0.14c5.43-0.71,13.34-2.46,19.4-3.5c1.52-0.26,3.1-0.63,4.5-0.28" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1296,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab4g" type="㇒" d="M39.82,56.74c0.11,0.94-0.21,1.73-0.94,2.38c-2.06,2.41-6.85,6.15-13.75,9.5" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1296,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab4h" type="㇕v" d="M38.22,62.67c6.86,3.12,12.46,20.56,7.1,33.1c-1.6,3.76-5.93,0.63-6.78,0.03" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1296,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab4i" type="㇒" d="M39.62,66.94c0.13,0.88-0.03,1.71-0.63,2.34c-2.74,2.85-8.99,7.85-17.8,12.38" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1296,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab4j" type="㇒" d="M43.21,75.11c0.18,1.18-0.52,2.09-1.33,2.98c-3.64,4.02-10.03,8.93-21.4,14.79" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1296,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab4k" type="㇒" d="M56.92,57.86c0.08,0.82-0.12,1.57-0.6,2.26c-1.34,2.43-4.66,6.19-8.95,8.64" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1296,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab4l" type="㇔/㇏" d="M48.12,70.25c4.85,2.06,12.17,7.17,15.38,13.25" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1296,-4)" class="stroke_order_diagram--existing_path"></path><path id="kvg:05287-s14" type="㇑" d="M71.77,28.08c0.98,0.92,1.76,2.67,1.76,4.52c0,10.59,0.15,21.16,0.05,27.65c-0.04,2.43-0.07,4.4-0.07,5.75" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1296,-4)" class="stroke_order_diagram--current_path"></path><path id="Sl9lrs5ab4n" type="㇑" d="M71.77,28.08c0.98,0.92,1.76,2.67,1.76,4.52c0,10.59,0.15,21.16,0.05,27.65c-0.04,2.43-0.07,4.4-0.07,5.75" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1296,-4)" class="stroke_order_diagram--current_path"></path><circle cx="71.77" cy="28.08" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,1296,-4)"></circle><line x1="1450" x2="1450" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line><line x1="1499" x2="1499" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><path id="Sl9lrs5ab4q" type="㇑a" d="M38.52,10.83c0.98,0.92,1.51,2.42,1.51,4.52c0,5.9-0.02,8.19-0.02,13.15" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1396,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab4r" type="㇐b" d="M41.1,19.52c6.65-0.77,9.65-1.27,13.11-1.88c1.09-0.19,3.04-0.14,4.29,0.11" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1396,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab4s" type="㇒" d="M21.18,32.43c0.7,0.7,1.03,1.7,1.03,2.84c0,22.48-2.95,40.98-11.95,53.39" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1396,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab4t" type="㇖a" d="M22.74,33.6c1.76-0.22,2.82-0.4,4.38-0.83c9.13-2.51,23.13-5.51,29.7-5.74c10.29-0.36,2.18,6.11-0.38,7.91" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1396,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab4u" type="㇐" d="M27,42.52c1.3,0.43,2.96,0.15,4.24-0.07c4.96-0.84,11.52-3.18,16.89-4.43c1.62-0.38,2.62-0.64,4.37-0.5" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1396,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab4v" type="㇟a" d="M37.25,32.43c0.54,0.54,0.81,1.57,0.81,2.27c0,2.8-0.06,4.55-0.06,7.49c0,3.19,0.88,4.08,6.58,4.08c1.85,0,5.84-0.25,7.43-0.76" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1396,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab4w" type="㇐" d="M27.7,55.49c1.18,0.26,2.75,0.25,3.55,0.14c5.43-0.71,13.34-2.46,19.4-3.5c1.52-0.26,3.1-0.63,4.5-0.28" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1396,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab4x" type="㇒" d="M39.82,56.74c0.11,0.94-0.21,1.73-0.94,2.38c-2.06,2.41-6.85,6.15-13.75,9.5" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1396,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab4y" type="㇕v" d="M38.22,62.67c6.86,3.12,12.46,20.56,7.1,33.1c-1.6,3.76-5.93,0.63-6.78,0.03" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1396,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab4z" type="㇒" d="M39.62,66.94c0.13,0.88-0.03,1.71-0.63,2.34c-2.74,2.85-8.99,7.85-17.8,12.38" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1396,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab50" type="㇒" d="M43.21,75.11c0.18,1.18-0.52,2.09-1.33,2.98c-3.64,4.02-10.03,8.93-21.4,14.79" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1396,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab51" type="㇒" d="M56.92,57.86c0.08,0.82-0.12,1.57-0.6,2.26c-1.34,2.43-4.66,6.19-8.95,8.64" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1396,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab52" type="㇔/㇏" d="M48.12,70.25c4.85,2.06,12.17,7.17,15.38,13.25" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1396,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab53" type="㇑" d="M71.77,28.08c0.98,0.92,1.76,2.67,1.76,4.52c0,10.59,0.15,21.16,0.05,27.65c-0.04,2.43-0.07,4.4-0.07,5.75" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1396,-4)" class="stroke_order_diagram--existing_path"></path><path id="kvg:05287-s15" type="㇚" d="M88.27,13.83c1.39,1.39,1.76,2.92,1.76,5.02c0,17.4-0.01,64.66-0.01,69.62c0,11.91-7.21,1.5-8.71,0.25" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1396,-4)" class="stroke_order_diagram--current_path"></path><path id="Sl9lrs5ab55" type="㇚" d="M88.27,13.83c1.39,1.39,1.76,2.92,1.76,5.02c0,17.4-0.01,64.66-0.01,69.62c0,11.91-7.21,1.5-8.71,0.25" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,1396,-4)" class="stroke_order_diagram--current_path"></path><circle cx="88.27" cy="13.83" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,1396,-4)"></circle></svg>
+  </div>
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="row">
+    <div class="small-12 large-2 columns" data-area="">
+    </div>
+    <div class="small-12 large-10 columns">
+      <div class="row">
+        <div class="small-12 columns">
+          
+<div class="row compounds">
+    <div class="small-12 large-6 columns">
+      <h2>On reading compounds</h2>
+      <ul class="no-bullet">
+        <li>
+  劇
+  【ゲキ】
+  drama, play, powerful drug
+</li>
+<li>
+  劇画
+  【ゲキガ】
+  comic strip with dramatic story
+</li>
+<li>
+  新劇
+  【シンゲキ】
+  school of western-inspired Japanese drama which developed towards the end of the Meiji period, shingeki, new-drama (movement)
+</li>
+<li>
+  京劇
+  【キョウゲキ】
+  classical Chinese opera
+</li>
+
+      </ul>
+    </div>
+</div>
+
+            <div class="row kanji-details--section">
+    <div class="small-6 large-3 columns">
+      <h2>Readings</h2>
+<div class="kanji-details__readings row">
+<div class="small-12 columns">
+
+    <dl class="dictionary_entry pinyin">
+      <dt>Mandarin Chinese (pinyin):</dt>
+      <dd>ju4</dd>
+    </dl>
+
+    <dl class="dictionary_entry korean">
+      <dt>Korean:</dt>
+      <dd>geug</dd>
+    </dl>
+</div>
+</div>
+
+    </div>
+
+
+    <div class="spanish_meanings small-6 large-3 columns">
+      <h2>Spanish</h2>
+      <ul class="kanji-details__meanings-list">
+            <li class="even">drama</li>
+            <li class="">obra</li>
+            <li class="even">teatro</li>
+            <li class="">violento</li>
+            <li class="even">intenso</li>
+      </ul>
+    </div>
+
+    <div class="portuguese_meanings small-6 large-3 columns">
+      <h2>Portuguese</h2>
+      <ul class="kanji-details__meanings-list">
+            <li class="even">drama</li>
+            <li class="">jogo</li>
+      </ul>
+    </div>
+
+    <div class="french_meanings small-6 large-3 columns">
+      <h2>French</h2>
+      <ul class="kanji-details__meanings-list">
+            <li class="even">théâtre</li>
+            <li class="">pièce (théâtre)</li>
+      </ul>
+    </div>
+  </div>
+
+          <div class="extra_info">
+  <ul class="tabs" data-tab="">
+    <li class="tab-title"><a href="#indices">Dictionary Indices</a></li>
+    <li class="tab-title"><a href="#classifications">Classifications</a></li>
+    <li class="tab-title"><a href="#codepoints">Codepoints</a></li>
+  </ul>
+  <div class="tabs-content">
+    <section class="content" id="indices">
+      <table summary="Dictionary indices">
+
+  <tbody><tr class="even">
+  <td class="dic_ref">
+    858
+  </td>
+  <td class="dic_name">
+    A Guide To Reading and Writing Japanese 3rd edition (Henshall, Seeley and De Groot)
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    848
+  </td>
+  <td class="dic_name">
+    A Guide To Remembering Japanese Characters (Kenneth G. Henshall)
+  </td>
+  </tr>
+  <tr class="even">
+  <td class="dic_ref">
+    458
+  </td>
+  <td class="dic_name">
+    A New Dictionary of Kanji Usage
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    247
+  </td>
+  <td class="dic_name">
+    Classic Nelson (Andrew Nelson)
+  </td>
+  </tr>
+  <tr class="even">
+  <td class="dic_ref">
+    1078
+  </td>
+  <td class="dic_name">
+    Essential Kanji (P.G. O’Neill)
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    365
+  </td>
+  <td class="dic_name">
+    Japanese Kanji Flashcards (Max Hodges and Tomoko Okazaki)
+  </td>
+  </tr>
+  <tr class="even">
+  <td class="dic_ref">
+    797
+  </td>
+  <td class="dic_name">
+    Kanji and Kana (Spahn and Hadamitzky)
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    811
+  </td>
+  <td class="dic_name">
+    Kanji and Kana, 2nd Edition (Spahn and Hadamitzky)
+  </td>
+  </tr>
+  <tr class="even">
+  <td class="dic_ref">
+    1140
+  </td>
+  <td class="dic_name">
+    Kanji in Context (Nishiguchi and Kono)
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    206
+  </td>
+  <td class="dic_name">
+    Kodansha Compact Kanji Guide
+  </td>
+  </tr>
+  <tr class="even">
+  <td class="dic_ref">
+    2399
+  </td>
+  <td class="dic_name">
+    Kodansha Kanji Dictionary (Jack Halpern)
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    1221
+  </td>
+  <td class="dic_name">
+    Kodansha Kanji Learner’s Dictionary (Jack Halpern)
+  </td>
+  </tr>
+  <tr class="even">
+  <td class="dic_ref">
+    1681
+  </td>
+  <td class="dic_name">
+    Kodansha Kanji Learner’s Dictionary, 2nd Edition (Jack Halpern)
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    2016
+  </td>
+  <td class="dic_name">
+    Les Kanjis dans la tete (Yves Maniette)
+  </td>
+  </tr>
+  <tr class="even">
+  <td class="dic_ref">
+    2218
+  </td>
+  <td class="dic_name">
+    Morohashi
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    1904
+  </td>
+  <td class="dic_name">
+    New Japanese English Character Dictionary (Jack Halpern)
+  </td>
+  </tr>
+  <tr class="even">
+  <td class="dic_ref">
+    517
+  </td>
+  <td class="dic_name">
+    New Nelson (John Haig)
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    1997
+  </td>
+  <td class="dic_name">
+    Remembering The Kanji (James Heisig)
+  </td>
+  </tr>
+  <tr class="even">
+  <td class="dic_ref">
+    2152
+  </td>
+  <td class="dic_name">
+    Remembering The Kanji, 6th edition (James Heisig)
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    982
+  </td>
+  <td class="dic_name">
+    Tuttle Kanji Cards (Alexander Kask)
+  </td>
+  </tr>
+</tbody></table>
+
+    </section>
+    <section class="content" id="classifications">
+      <table summary="Classifications indices">
+
+  <tbody><tr class="even">
+  <td class="dic_ref">
+    1243
+  </td>
+  <td class="dic_name">
+    <span title="Joseph De Roo">2001 Kanji</span>
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    2f13.2
+  </td>
+  <td class="dic_name">
+    <span title="Spahn and Hadamitzky">The Kanji Dictionary</span>
+  </td>
+  </tr>
+  <tr class="even">
+  <td class="dic_ref">
+    1-13-2
+  </td>
+  <td class="dic_name">
+    <span title="System of Kanji Indexing by Patterns">SKIP code</span>
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    2220.0
+  </td>
+  <td class="dic_name">
+    Four corner code
+  </td>
+  </tr>
+</tbody></table>
+
+    </section>
+    <section class="content" id="codepoints">
+      <table summary="Classifications indices">
+
+  <tbody><tr class="even">
+  <td class="dic_ref">
+    1-23-64
+  </td>
+  <td class="dic_name">
+    JIS X 0208-1997 kuten code
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    5287
+  </td>
+  <td class="dic_name">
+    Unicode hex code
+  </td>
+  </tr>
+</tbody></table>
+
+    </section>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="kanji details">
+  <div class="row">
+    <div class="small-12 large-2 columns" data-area="">
+      <div class="row">
+        <div class="large-12 columns">
+          <h1 class="character" data-area-name="print" lang="ja">画</h1>
+        </div>
+        <div class="large-12 columns">
+          <div class="kanji-details__stroke_count">
+            <strong>8</strong> strokes
+          </div>
+          
+<div class="radicals">
+    <dl class="dictionary_entry on_yomi">
+      <dt>Radical:</dt>
+      <dd>
+        <span title="KangXi radical 102. Also listed as 一 (one, 1) in the “classic” Nelson kanji dictionary.">
+            <span class="radical_meaning">
+              field
+            </span>
+
+          田
+        </span>
+      </dd>
+    </dl>
+</div>
+
+
+          
+<div class="radicals">
+  <dl class="dictionary_entry on_yomi">
+    <dt>Parts:</dt>
+    <dd>
+        <a href="https://jisho.org/search/%E4%B8%80%20%23kanji">一</a>
+        <a href="https://jisho.org/search/%E5%87%B5%20%23kanji">凵</a>
+        <a href="https://jisho.org/search/%E7%94%B0%20%23kanji">田</a>
+    </dd>
+  </dl>
+</div>
+
+
+            <dl class="dictionary_entry variants">
+    <dt>Variants:</dt>
+    <dd>
+        <a href="https://jisho.org/search/%E7%95%AB%20%23kanji">畫</a>
+    </dd>
+  </dl>
+
+        </div>
+      </div>
+    </div>
+    <div class="small-12 large-10 columns">
+      <div class="row kanji-details--section">
+  <div class="small-12 large-7 columns kanji-details__main">
+    <div class="kanji-details__main-meanings">
+      brush-stroke, picture
+    </div>
+    <div class="kanji-details__main-readings">
+        <dl class="dictionary_entry kun_yomi">
+          <dt>Kun:</dt>
+          <dd class="kanji-details__main-readings-list" lang="ja">
+            <a href="https://jisho.org/search/%E7%94%BB%20%E3%81%88%E3%81%8C%E3%81%8F">えが.く</a>、 <a href="https://jisho.org/search/%E7%94%BB%20%E3%81%8B%E3%81%8F%E3%81%99%E3%82%8B">かく.する</a>、 <a href="https://jisho.org/search/%E7%94%BB%20%E3%81%8B%E3%81%8E%E3%82%8B">かぎ.る</a>、 <a href="https://jisho.org/search/%E7%94%BB%20%E3%81%AF%E3%81%8B%E3%82%8A%E3%81%94%E3%81%A8">はかりごと</a>、 <a href="https://jisho.org/search/%E7%94%BB%20%E3%81%AF%E3%81%8B%E3%82%8B">はか.る</a>
+          </dd>
+        </dl>
+
+        <dl class="dictionary_entry on_yomi">
+          <dt>On:</dt>
+          <dd class="kanji-details__main-readings-list" lang="ja">
+            <a href="https://jisho.org/search/%E7%94%BB%20%E3%81%8C">ガ</a>、 <a href="https://jisho.org/search/%E7%94%BB%20%E3%81%8B%E3%81%8F">カク</a>、 <a href="https://jisho.org/search/%E7%94%BB%20%E3%81%88">エ</a>、 <a href="https://jisho.org/search/%E7%94%BB%20%E3%81%8B%E3%81%84">カイ</a>
+          </dd>
+        </dl>
+    </div>
+  </div>
+  <div class="small-12 large-5 columns">
+    <div class="kanji_stats">
+    <div class="grade">
+      Jōyō kanji, taught in <strong>grade 2</strong>
+    </div>
+
+    <div class="jlpt">
+      JLPT level <strong>N4</strong>
+    </div>
+
+    <div class="frequency">
+      <strong>199</strong> of 2500 most used kanji in newspapers
+    </div>
+</div>
+
+  </div>
+</div>
+
+      <ul class="inline-list">
+  <li><a href="https://jisho.org/search/%E7%94%BB">Words starting with 画</a></li>
+  <li><a href="https://jisho.org/search/*%E7%94%BB">Words ending with 画</a></li>
+  <li><a href="https://jisho.org/search/*%E7%94%BB*">Words containing 画</a></li>
+  <li><a href="#" data-dropdown="kanji_51866275d5dda79658000104_links" data-options="is_hover:true; hover_timeout:300" aria-expanded="false">External links</a></li>
+</ul>
+
+<ul id="kanji_51866275d5dda79658000104_links" class="f-dropdown" data-dropdown-content="">
+  <li><a href="http://www.unicode.org/cgi-bin/GetUnihanData.pl?codepoint=%E7%94%BB&amp;useutf8=true" class="external">Unihan database</a></li>
+  <li><a href="http://en.wiktionary.org/wiki/%E7%94%BB" class="external">Wiktionary</a></li>
+  <li><a href="http://www.google.com/search?ie=utf8&amp;oe=utf8&amp;lr=lang_ja&amp;q=%E7%94%BB" class="external">Google</a></li>
+  <li><a href="https://www.google.com/search?tbm=isch&amp;q=%E7%94%BB" class="external">Google image search</a></li>
+</ul>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 large-2 columns" data-area="">
+      <div class="row">
+        <div class="small-12 columns">
+            <div id="kanji_strokes_51866275d5dda79658000104" class="kanji_strokes loaded" data-area-name="brush">
+    <button class="kanji_play_button">
+      <svg viewBox="0 0 30 30" class="icon play-circle-icon ">
+  <use xlink:href="https://jisho.org/assets/icons-ab7975eb6f8bb532f99ba2d769be43c5431dec4c0e4d220df7367f1d954d9424.svg#play-circle"></use>
+</svg>
+
+    </button>
+    <div class="stage">
+      <canvas style="width: 140px; height: 140px;" width="175" height="175"></canvas>
+    <map id="image_map_2" name="image_map_2"><area shape="poly" coords="32.810714556374904,42.9028105362257,43.00284934389687,43.3651710299461,97.83949590745105,37.41901839446303,104.97124846161907,37.923069309048664,106.33884328150015,12.27142610379537,95.64307289988834,11.825018302784668,40.79164606894716,17.772443648952983,34.312221223441604,17.258657353682562"><area shape="poly" coords="28.214420383946774,56.79760445315266,29.098434144829245,56.88302962863547,33.30627195129423,93.24212717643732,33.622621799340294,97.60520588715335,59.23976352176063,95.69754640642465,58.83684731476081,90.40190952081039,54.46486860746433,52.830731839254426,50.77640530412661,44.51615701473723"><area shape="poly" coords="44.229840157634335,65.7607106059509,93.72420000064294,59.79639606880674,86.34169951415464,51.687208389740896,81.65099089441783,84.76206000727737,80.3839395137755,90.23142399913435,105.4435834220043,95.8786677439849,107.05359626154545,88.58105925877767,112.02160323813892,51.039397114846246,92.97671743054971,34.119200261468485,41.18300387906291,40.25396829313166"><area shape="poly" coords="55.77109926351876,35.86347492018587,56.5056549042885,35.3873502761026,56.38534949764685,89.98400072260937,82.0733660986834,90.03801762601444,82.18425335259224,34.68971394408087,79.47660715849958,25.967717740364577"><area shape="poly" coords="47.0707492504394,84.88374029468234,96.77717126878805,79.79750176257225,94.16227827249638,54.24286520990479,44.455856254147754,59.329103742014894"><area shape="poly" coords="48.99457839319798,106.32267658665288,93.55054169595026,102.31533713711161,91.24945830404971,76.7305344225214,46.69349500129742,80.73787387206269"><area shape="poly" coords="11.020952607859654,63.33970721467605,12.564052908991748,66.08336515351513,11.39707096647346,110.69530058769101,28.881627953831565,126.98796457358401,115.44936730864542,121.49146252591234,113.81668773722612,95.85532646491333,28.55690415626014,101.30194368329673,37.02494738215039,108.93772693524473,38.24695626532017,65.56801099327384,35.37170794259905,55.15937535413128"><area shape="poly" coords="105.75105379063743,51.279303735159445,106.94297580915335,52.69354592661598,103.77799076433956,105.77156360658894,103.20878734326462,113.73077181204302,128.8315796292124,115.56097130722304,129.41833951088975,107.33669327414502,132.62399666791086,53.2954448990721,130.2195884111974,43.45831094373965"></map><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" ismap="ismap" usemap="#image_map_2" style="top: 0px; left: 0px; position: absolute; width: 150px; height: 150px;"></div>
+    <div class="buttons">
+      <svg viewBox="0 0 30 30" class="icon play-icon replay_button">
+  <use xlink:href="https://jisho.org/assets/icons-ab7975eb6f8bb532f99ba2d769be43c5431dec4c0e4d220df7367f1d954d9424.svg#play"></use>
+</svg>
+
+      <svg viewBox="0 0 30 30" class="icon settings-icon toggle_kanji_actions">
+  <use xlink:href="https://jisho.org/assets/icons-ab7975eb6f8bb532f99ba2d769be43c5431dec4c0e4d220df7367f1d954d9424.svg#settings"></use>
+</svg>
+
+    </div>
+    <div class="actions">
+      <div class="vertical-middle">
+        <div class="vertical-middle-inner">
+          <div class="slider">
+            <h3>Speed</h3>
+            <div class="slider speed_slider noUi-target"><div class="noUi-base noUi-background noUi-horizontal"><div class="noUi-origin noUi-origin-lower" style="left: 44.4444%;"><div class="noUi-handle noUi-handle-lower"></div></div></div></div>
+          </div>
+        </div>
+      </div>
+      <!--
+      <h3>Thickness</h3>
+      <div class="slider thickness_slider"></div>
+      -->
+      <button class="ok_button tiny secondary">Done</button>
+    </div>
+  </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="small-12 large-10 columns">
+      <div class="row">
+        <div class="small-12 columns">
+            <h2>Stroke order</h2>
+  <div class="stroke_order_diagram--outer_container">
+    <svg class="stroke_order_diagram--svg_container_for_51866275d5dda79658000104" style="height: 100px; width: 800px;" viewBox="0 0 800 100"><desc>Created with Snap</desc><defs></defs><line x1="1" x2="799" y1="1" y2="1" class="stroke_order_diagram--bounding_box"></line><line x1="1" x2="1" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><line x1="1" x2="799" y1="99" y2="99" class="stroke_order_diagram--bounding_box"></line><line x1="0" x2="800" y1="50" y2="50" class="stroke_order_diagram--guide_line"></line><line x1="50" x2="50" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line><line x1="99" x2="99" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><path id="kvg:0753b-s1" type="㇐" d="M26.13,23.42c1.98,0.38,4.51,0.58,6.49,0.38c12.89-1.3,29.64-3.55,42.7-4.63c3.29-0.27,5.13-0.04,6.94,0.37" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,-4,-4)" class="stroke_order_diagram--current_path"></path><path id="Sl9lrs5ab5n" type="㇐" d="M26.13,23.42c1.98,0.38,4.51,0.58,6.49,0.38c12.89-1.3,29.64-3.55,42.7-4.63c3.29-0.27,5.13-0.04,6.94,0.37" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,-4,-4)" class="stroke_order_diagram--current_path"></path><circle cx="26.13" cy="23.42" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,-4,-4)"></circle><line x1="150" x2="150" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line><line x1="199" x2="199" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><path id="Sl9lrs5ab5q" type="㇐" d="M26.13,23.42c1.98,0.38,4.51,0.58,6.49,0.38c12.89-1.3,29.64-3.55,42.7-4.63c3.29-0.27,5.13-0.04,6.94,0.37" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,96,-4)" class="stroke_order_diagram--existing_path"></path><path id="kvg:0753b-s2" type="㇑" d="M30.75,39.44c0.97,0.97,1.46,1.57,1.78,3.27c1.21,6.36,2.51,18.29,3.34,28.78c0.1,1.27,0.19,2.53,0.28,3.76" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,96,-4)" class="stroke_order_diagram--current_path"></path><path id="Sl9lrs5ab5s" type="㇑" d="M30.75,39.44c0.97,0.97,1.46,1.57,1.78,3.27c1.21,6.36,2.51,18.29,3.34,28.78c0.1,1.27,0.19,2.53,0.28,3.76" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,96,-4)" class="stroke_order_diagram--current_path"></path><circle cx="30.75" cy="39.44" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,96,-4)"></circle><line x1="250" x2="250" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line><line x1="299" x2="299" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><path id="Sl9lrs5ab5v" type="㇐" d="M26.13,23.42c1.98,0.38,4.51,0.58,6.49,0.38c12.89-1.3,29.64-3.55,42.7-4.63c3.29-0.27,5.13-0.04,6.94,0.37" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,196,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab5w" type="㇑" d="M30.75,39.44c0.97,0.97,1.46,1.57,1.78,3.27c1.21,6.36,2.51,18.29,3.34,28.78c0.1,1.27,0.19,2.53,0.28,3.76" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,196,-4)" class="stroke_order_diagram--existing_path"></path><path id="kvg:0753b-s3" type="㇕a" d="M33.25,41.27c12.25-2.02,32.09-4.15,39.43-4.71c3.12-0.24,4.71,1.67,4.54,3.43c-0.52,5.36-2,18.54-3.76,27.49c-0.36,1.85-0.74,3.54-1.12,4.97" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,196,-4)" class="stroke_order_diagram--current_path"></path><path id="Sl9lrs5ab5y" type="㇕a" d="M33.25,41.27c12.25-2.02,32.09-4.15,39.43-4.71c3.12-0.24,4.71,1.67,4.54,3.43c-0.52,5.36-2,18.54-3.76,27.49c-0.36,1.85-0.74,3.54-1.12,4.97" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,196,-4)" class="stroke_order_diagram--current_path"></path><circle cx="33.25" cy="41.27" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,196,-4)"></circle><line x1="350" x2="350" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line><line x1="399" x2="399" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><path id="Sl9lrs5ab61" type="㇐" d="M26.13,23.42c1.98,0.38,4.51,0.58,6.49,0.38c12.89-1.3,29.64-3.55,42.7-4.63c3.29-0.27,5.13-0.04,6.94,0.37" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,296,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab62" type="㇑" d="M30.75,39.44c0.97,0.97,1.46,1.57,1.78,3.27c1.21,6.36,2.51,18.29,3.34,28.78c0.1,1.27,0.19,2.53,0.28,3.76" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,296,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab63" type="㇕a" d="M33.25,41.27c12.25-2.02,32.09-4.15,39.43-4.71c3.12-0.24,4.71,1.67,4.54,3.43c-0.52,5.36-2,18.54-3.76,27.49c-0.36,1.85-0.74,3.54-1.12,4.97" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,296,-4)" class="stroke_order_diagram--existing_path"></path><path id="kvg:0753b-s4" type="㇑a" d="M52.65,24.07c0.84,0.85,1.34,2.09,1.34,3.21c0,10.84-0.09,37.09-0.09,42.8" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,296,-4)" class="stroke_order_diagram--current_path"></path><path id="Sl9lrs5ab65" type="㇑a" d="M52.65,24.07c0.84,0.85,1.34,2.09,1.34,3.21c0,10.84-0.09,37.09-0.09,42.8" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,296,-4)" class="stroke_order_diagram--current_path"></path><circle cx="52.65" cy="24.07" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,296,-4)"></circle><line x1="450" x2="450" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line><line x1="499" x2="499" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><path id="Sl9lrs5ab68" type="㇐" d="M26.13,23.42c1.98,0.38,4.51,0.58,6.49,0.38c12.89-1.3,29.64-3.55,42.7-4.63c3.29-0.27,5.13-0.04,6.94,0.37" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,396,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab69" type="㇑" d="M30.75,39.44c0.97,0.97,1.46,1.57,1.78,3.27c1.21,6.36,2.51,18.29,3.34,28.78c0.1,1.27,0.19,2.53,0.28,3.76" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,396,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab6a" type="㇕a" d="M33.25,41.27c12.25-2.02,32.09-4.15,39.43-4.71c3.12-0.24,4.71,1.67,4.54,3.43c-0.52,5.36-2,18.54-3.76,27.49c-0.36,1.85-0.74,3.54-1.12,4.97" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,396,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab6b" type="㇑a" d="M52.65,24.07c0.84,0.85,1.34,2.09,1.34,3.21c0,10.84-0.09,37.09-0.09,42.8" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,396,-4)" class="stroke_order_diagram--existing_path"></path><path id="kvg:0753b-s5" type="㇐a" d="M35.63,56.14c8.25-1.39,32.87-3.89,38.7-3.96" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,396,-4)" class="stroke_order_diagram--current_path"></path><path id="Sl9lrs5ab6d" type="㇐a" d="M35.63,56.14c8.25-1.39,32.87-3.89,38.7-3.96" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,396,-4)" class="stroke_order_diagram--current_path"></path><circle cx="35.63" cy="56.14" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,396,-4)"></circle><line x1="550" x2="550" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line><line x1="599" x2="599" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><path id="Sl9lrs5ab6g" type="㇐" d="M26.13,23.42c1.98,0.38,4.51,0.58,6.49,0.38c12.89-1.3,29.64-3.55,42.7-4.63c3.29-0.27,5.13-0.04,6.94,0.37" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,496,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab6h" type="㇑" d="M30.75,39.44c0.97,0.97,1.46,1.57,1.78,3.27c1.21,6.36,2.51,18.29,3.34,28.78c0.1,1.27,0.19,2.53,0.28,3.76" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,496,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab6i" type="㇕a" d="M33.25,41.27c12.25-2.02,32.09-4.15,39.43-4.71c3.12-0.24,4.71,1.67,4.54,3.43c-0.52,5.36-2,18.54-3.76,27.49c-0.36,1.85-0.74,3.54-1.12,4.97" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,496,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab6j" type="㇑a" d="M52.65,24.07c0.84,0.85,1.34,2.09,1.34,3.21c0,10.84-0.09,37.09-0.09,42.8" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,496,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab6k" type="㇐a" d="M35.63,56.14c8.25-1.39,32.87-3.89,38.7-3.96" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,496,-4)" class="stroke_order_diagram--existing_path"></path><path id="kvg:0753b-s6" type="㇐a" d="M37.25,72.82C48.5,71.75,59.75,70,71.94,69.7" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,496,-4)" class="stroke_order_diagram--current_path"></path><path id="Sl9lrs5ab6m" type="㇐a" d="M37.25,72.82C48.5,71.75,59.75,70,71.94,69.7" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,496,-4)" class="stroke_order_diagram--current_path"></path><circle cx="37.25" cy="72.82" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,496,-4)"></circle><line x1="650" x2="650" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line><line x1="699" x2="699" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><path id="Sl9lrs5ab6p" type="㇐" d="M26.13,23.42c1.98,0.38,4.51,0.58,6.49,0.38c12.89-1.3,29.64-3.55,42.7-4.63c3.29-0.27,5.13-0.04,6.94,0.37" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,596,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab6q" type="㇑" d="M30.75,39.44c0.97,0.97,1.46,1.57,1.78,3.27c1.21,6.36,2.51,18.29,3.34,28.78c0.1,1.27,0.19,2.53,0.28,3.76" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,596,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab6r" type="㇕a" d="M33.25,41.27c12.25-2.02,32.09-4.15,39.43-4.71c3.12-0.24,4.71,1.67,4.54,3.43c-0.52,5.36-2,18.54-3.76,27.49c-0.36,1.85-0.74,3.54-1.12,4.97" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,596,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab6s" type="㇑a" d="M52.65,24.07c0.84,0.85,1.34,2.09,1.34,3.21c0,10.84-0.09,37.09-0.09,42.8" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,596,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab6t" type="㇐a" d="M35.63,56.14c8.25-1.39,32.87-3.89,38.7-3.96" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,596,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab6u" type="㇐a" d="M37.25,72.82C48.5,71.75,59.75,70,71.94,69.7" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,596,-4)" class="stroke_order_diagram--existing_path"></path><path id="kvg:0753b-s7" type="㇄a" d="M18.06,46.13c1.34,1.34,1.77,3.48,1.72,5.12c-0.28,8.63-0.5,21.08-0.93,34.25c0,2.75,0.42,3.73,3.51,3.37c11.95-1.39,52.28-3.55,66.89-4.26" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,596,-4)" class="stroke_order_diagram--current_path"></path><path id="Sl9lrs5ab6w" type="㇄a" d="M18.06,46.13c1.34,1.34,1.77,3.48,1.72,5.12c-0.28,8.63-0.5,21.08-0.93,34.25c0,2.75,0.42,3.73,3.51,3.37c11.95-1.39,52.28-3.55,66.89-4.26" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,596,-4)" class="stroke_order_diagram--current_path"></path><circle cx="18.06" cy="46.13" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,596,-4)"></circle><line x1="750" x2="750" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line><line x1="799" x2="799" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line><path id="Sl9lrs5ab6z" type="㇐" d="M26.13,23.42c1.98,0.38,4.51,0.58,6.49,0.38c12.89-1.3,29.64-3.55,42.7-4.63c3.29-0.27,5.13-0.04,6.94,0.37" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,696,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab70" type="㇑" d="M30.75,39.44c0.97,0.97,1.46,1.57,1.78,3.27c1.21,6.36,2.51,18.29,3.34,28.78c0.1,1.27,0.19,2.53,0.28,3.76" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,696,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab71" type="㇕a" d="M33.25,41.27c12.25-2.02,32.09-4.15,39.43-4.71c3.12-0.24,4.71,1.67,4.54,3.43c-0.52,5.36-2,18.54-3.76,27.49c-0.36,1.85-0.74,3.54-1.12,4.97" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,696,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab72" type="㇑a" d="M52.65,24.07c0.84,0.85,1.34,2.09,1.34,3.21c0,10.84-0.09,37.09-0.09,42.8" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,696,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab73" type="㇐a" d="M35.63,56.14c8.25-1.39,32.87-3.89,38.7-3.96" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,696,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab74" type="㇐a" d="M37.25,72.82C48.5,71.75,59.75,70,71.94,69.7" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,696,-4)" class="stroke_order_diagram--existing_path"></path><path id="Sl9lrs5ab75" type="㇄a" d="M18.06,46.13c1.34,1.34,1.77,3.48,1.72,5.12c-0.28,8.63-0.5,21.08-0.93,34.25c0,2.75,0.42,3.73,3.51,3.37c11.95-1.39,52.28-3.55,66.89-4.26" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,696,-4)" class="stroke_order_diagram--existing_path"></path><path id="kvg:0753b-s8" type="㇑" d="M91.86,36.88c1,1,1.5,2.33,1.4,4.38c-0.53,11.45-1.3,25.21-2.48,41.7c-0.15,2.06-0.3,4.16-0.45,6.3" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,696,-4)" class="stroke_order_diagram--current_path"></path><path id="Sl9lrs5ab77" type="㇑" d="M91.86,36.88c1,1,1.5,2.33,1.4,4.38c-0.53,11.45-1.3,25.21-2.48,41.7c-0.15,2.06-0.3,4.16-0.45,6.3" kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,696,-4)" class="stroke_order_diagram--current_path"></path><circle cx="91.86" cy="36.88" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,696,-4)"></circle></svg>
+  </div>
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="row">
+    <div class="small-12 large-2 columns" data-area="">
+    </div>
+    <div class="small-12 large-10 columns">
+      <div class="row">
+        <div class="small-12 columns">
+          
+<div class="row compounds">
+    <div class="small-12 large-6 columns">
+      <h2>On reading compounds</h2>
+      <ul class="no-bullet">
+        <li>
+  絵
+  【エ】
+  picture, drawing, painting, sketch, image (TV, film, etc.), picture, footage
+</li>
+<li>
+  画家
+  【ガカ】
+  painter, artist
+</li>
+<li>
+  洋画
+  【ヨウガ】
+  Western painting, Western film, Western movie
+</li>
+<li>
+  邦画
+  【ホウガ】
+  Japanese film, Japanese painting
+</li>
+<li>
+  画
+  【カク】
+  stroke (of a kanji, etc.)
+</li>
+<li>
+  描く
+  【エガク】
+  to draw, to paint, to sketch, to depict, to describe, to picture in 
+one's mind, to imagine, to form a certain shape (e.g. path of an action,
+ appearance of an object, etc.)
+</li>
+<li>
+  参画
+  【サンカク】
+  taking part (in planning), participation
+</li>
+<li>
+  家族計画
+  【カゾクケイカク】
+  family planning
+</li>
+<li>
+  絵
+  【エ】
+  picture, drawing, painting, sketch, image (TV, film, etc.), picture, footage
+</li>
+<li>
+  描く
+  【エガク】
+  to draw, to paint, to sketch, to depict, to describe, to picture in 
+one's mind, to imagine, to form a certain shape (e.g. path of an action,
+ appearance of an object, etc.)
+</li>
+<li>
+  似顔絵
+  【ニガオエ】
+  portrait, likeness, sketch (of a face)
+</li>
+<li>
+  影絵
+  【カゲエ】
+  shadow picture, silhouette, shadowgraph
+</li>
+
+      </ul>
+    </div>
+    <div class="small-12 large-6 columns">
+      <h2>Kun reading compounds</h2>
+      <ul class="no-bullet">
+        <li>
+  描く
+  【えがく】
+  to draw, to paint, to sketch, to depict, to describe, to picture in 
+one's mind, to imagine, to form a certain shape (e.g. path of an action,
+ appearance of an object, etc.)
+</li>
+<li>
+  画する
+  【かくする】
+  to draw (a line), to demarcate, to mark, to divide, to map out, to plan
+</li>
+
+      </ul>
+    </div>
+</div>
+
+            <div class="row kanji-details--section">
+    <div class="small-6 large-3 columns">
+      <h2>Readings</h2>
+<div class="kanji-details__readings row">
+<div class="small-12 columns">
+
+    <dl class="dictionary_entry pinyin">
+      <dt>Mandarin Chinese (pinyin):</dt>
+      <dd>hua4</dd>
+    </dl>
+
+    <dl class="dictionary_entry korean">
+      <dt>Korean:</dt>
+      <dd>hwa, hoeg</dd>
+    </dl>
+</div>
+</div>
+
+    </div>
+
+
+    <div class="spanish_meanings small-6 large-3 columns">
+      <h2>Spanish</h2>
+      <ul class="kanji-details__meanings-list">
+            <li class="even">dibujo</li>
+            <li class="">trazo</li>
+            <li class="even">puntuar</li>
+            <li class="">interrumpir</li>
+      </ul>
+    </div>
+
+    <div class="portuguese_meanings small-6 large-3 columns">
+      <h2>Portuguese</h2>
+      <ul class="kanji-details__meanings-list">
+            <li class="even">gravura</li>
+      </ul>
+    </div>
+
+    <div class="french_meanings small-6 large-3 columns">
+      <h2>French</h2>
+      <ul class="kanji-details__meanings-list">
+            <li class="even">trait de plume</li>
+            <li class="">dessin</li>
+            <li class="even">écran</li>
+            <li class="">compteur de traits de kanji</li>
+      </ul>
+    </div>
+  </div>
+
+          <div class="extra_info">
+  <ul class="tabs" data-tab="">
+    <li class="tab-title"><a href="#indices">Dictionary Indices</a></li>
+    <li class="tab-title"><a href="#classifications">Classifications</a></li>
+    <li class="tab-title"><a href="#codepoints">Codepoints</a></li>
+  </ul>
+  <div class="tabs-content">
+    <section class="content" id="indices">
+      <table summary="Dictionary indices">
+
+  <tbody><tr class="even">
+  <td class="dic_ref">
+    167
+  </td>
+  <td class="dic_name">
+    A Guide To Reading and Writing Japanese (Florence Sakade)
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    91
+  </td>
+  <td class="dic_name">
+    A Guide To Reading and Writing Japanese 3rd edition (Henshall, Seeley and De Groot)
+  </td>
+  </tr>
+  <tr class="even">
+  <td class="dic_ref">
+    85
+  </td>
+  <td class="dic_name">
+    A Guide To Remembering Japanese Characters (Kenneth G. Henshall)
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    150
+  </td>
+  <td class="dic_name">
+    A New Dictionary of Kanji Usage
+  </td>
+  </tr>
+  <tr class="even">
+  <td class="dic_ref">
+    50
+  </td>
+  <td class="dic_name">
+    Classic Nelson (Andrew Nelson)
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    477
+  </td>
+  <td class="dic_name">
+    Essential Kanji (P.G. O’Neill)
+  </td>
+  </tr>
+  <tr class="even">
+  <td class="dic_ref">
+    222
+  </td>
+  <td class="dic_name">
+    Japanese Kanji Flashcards (Max Hodges and Tomoko Okazaki)
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    991
+  </td>
+  <td class="dic_name">
+    Japanese Names (P.G. O’Neill)
+  </td>
+  </tr>
+  <tr class="even">
+  <td class="dic_ref">
+    2.14
+  </td>
+  <td class="dic_name">
+    Japanese for Busy People
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    343
+  </td>
+  <td class="dic_name">
+    Kanji and Kana (Spahn and Hadamitzky)
+  </td>
+  </tr>
+  <tr class="even">
+  <td class="dic_ref">
+    343
+  </td>
+  <td class="dic_name">
+    Kanji and Kana, 2nd Edition (Spahn and Hadamitzky)
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    235
+  </td>
+  <td class="dic_name">
+    Kanji in Context (Nishiguchi and Kono)
+  </td>
+  </tr>
+  <tr class="even">
+  <td class="dic_ref">
+    176
+  </td>
+  <td class="dic_name">
+    Kodansha Compact Kanji Guide
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    3723
+  </td>
+  <td class="dic_name">
+    Kodansha Kanji Dictionary (Jack Halpern)
+  </td>
+  </tr>
+  <tr class="even">
+  <td class="dic_ref">
+    1904
+  </td>
+  <td class="dic_name">
+    Kodansha Kanji Learner’s Dictionary (Jack Halpern)
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    2586
+  </td>
+  <td class="dic_name">
+    Kodansha Kanji Learner’s Dictionary, 2nd Edition (Jack Halpern)
+  </td>
+  </tr>
+  <tr class="even">
+  <td class="dic_ref">
+    1178
+  </td>
+  <td class="dic_name">
+    Les Kanjis dans la tete (Yves Maniette)
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    21739P
+  </td>
+  <td class="dic_name">
+    Morohashi
+  </td>
+  </tr>
+  <tr class="even">
+  <td class="dic_ref">
+    3000
+  </td>
+  <td class="dic_name">
+    New Japanese English Character Dictionary (Jack Halpern)
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    3733
+  </td>
+  <td class="dic_name">
+    New Nelson (John Haig)
+  </td>
+  </tr>
+  <tr class="even">
+  <td class="dic_ref">
+    1170
+  </td>
+  <td class="dic_name">
+    Remembering The Kanji (James Heisig)
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    1254
+  </td>
+  <td class="dic_name">
+    Remembering The Kanji, 6th edition (James Heisig)
+  </td>
+  </tr>
+  <tr class="even">
+  <td class="dic_ref">
+    176
+  </td>
+  <td class="dic_name">
+    The Kanji Way to Japanese Language Power (Dale Crowley)
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    155
+  </td>
+  <td class="dic_name">
+    Tuttle Kanji Cards (Alexander Kask)
+  </td>
+  </tr>
+</tbody></table>
+
+    </section>
+    <section class="content" id="classifications">
+      <table summary="Classifications indices">
+
+  <tbody><tr class="even">
+  <td class="dic_ref">
+    3175
+  </td>
+  <td class="dic_name">
+    <span title="Joseph De Roo">2001 Kanji</span>
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    0a8.7
+  </td>
+  <td class="dic_name">
+    <span title="Spahn and Hadamitzky">The Kanji Dictionary</span>
+  </td>
+  </tr>
+  <tr class="even">
+  <td class="dic_ref">
+    3-2-6
+  </td>
+  <td class="dic_name">
+    <span title="System of Kanji Indexing by Patterns">SKIP code</span>
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    1077.2
+  </td>
+  <td class="dic_name">
+    Four corner code
+  </td>
+  </tr>
+</tbody></table>
+
+    </section>
+    <section class="content" id="codepoints">
+      <table summary="Classifications indices">
+
+  <tbody><tr class="even">
+  <td class="dic_ref">
+    1-18-72
+  </td>
+  <td class="dic_name">
+    JIS X 0208-1997 kuten code
+  </td>
+  </tr>
+  <tr class="">
+  <td class="dic_ref">
+    753b
+  </td>
+  <td class="dic_name">
+    Unicode hex code
+  </td>
+  </tr>
+</tbody></table>
+
+    </section>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <div class="row">
+
+    <div id="secondary" class="large-12 columns search-secondary_column"></div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+      <footer class="clearfix">
+  <div class="ornament">
+  </div>
+
+    
+<div class="footer-ad">
+  <!-- /1910472/search_bottom_leaderboard -->
+  <div id="div-gpt-ad-1528340463374-0" style="height:90px; width:728px;">
+  <script>
+  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1528340463374-0'); });
+  </script>
+  </div>
+</div>
+
+
+
+  <div class="row">
+    <div class="small-12 columns">
+      <p>
+        Jisho.org is lovingly crafted by <a href="https://jisho.org/about">Kim, Miwa and Andrew</a>.
+        You can reach us at
+        Facebook <a href="https://www.facebook.com/Jisho.org">fb.com/jisho.org</a>, Twitter <a href="https://twitter.com/jisho">@jisho</a> or e-mail <a href="mailto:jisho.org@gmail.com">jisho.org@gmail.com</a>. Before you contact us, please read our list of <a href="https://jisho.org/faq">frequently asked questions</a>.
+ Please note that we read all messages we get, but it can take a long 
+time for us to reply as Jisho is a side project and we do not have very 
+much time to devote to it.
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 large-4 columns">
+      <p>
+        This site uses the <a href="http://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project">JMdict</a>, <a href="http://www.edrdg.org/wiki/index.php/KANJIDIC_Project">Kanjidic2</a>, <a href="http://www.edrdg.org/enamdict/enamdict_doc.html">JMnedict</a> and <a href="http://www.edrdg.org/krad/kradinf.html">Radkfile</a> dictionary files. These files are the property of the <a href="http://www.edrdg.org/"> Electronic Dictionary Research and Development Group</a>, and are used in conformance with the Group's <a href="http://www.edrdg.org/edrdg/licence.html">licence</a>.
+      </p>
+      <p>
+        Example sentences come from the <a href="http://tatoeba.org/">Tatoeba</a> project and are licensed under <a href="http://creativecommons.org/licenses/by/2.0/fr/">Creative Commons CC-BY</a>.
+      </p>
+      <p>
+        Audio files are graciously provided by <a href="http://www.tofugu.com/">Tofugu’s</a> excellent kanji learning site <a href="http://www.wanikani.com/">WaniKani</a>.
+      </p>
+    </div>
+    <div class="small-12 large-4 columns">
+      <p>
+        The SKIP (System of Kanji Indexing by Patterns) system for 
+ordering kanji was developed by Jack Halpern (Kanji Dictionary 
+Publishing Society at <a href="http://www.kanji.org/">http://www.kanji.org/</a>), and is used with his permission. The license is <a href="http://www.kanji.org/kanji/dictionaries/skip_permission.htm">Creative Commons Attribution-ShareAlike 4.0 International</a>.
+      </p>
+    </div>
+    <div class="small-12 large-4 columns">
+      <p>
+        Kanji stroke diagrams are based on data from <a href="http://kanjivg.tagaini.net/" title="Welcome - KanjiVG">KanjiVG</a>, which is copyright © 2009-2012 Ulrich Apel and released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0</a> license.
+      </p>
+      <p>
+        Wikipedia data comes from the <a href="http://wiki.dbpedia.org/about">DBpedia</a> project and is dual licensed under <a href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike 3.0</a> and <a href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License">GNU Free Documentation License</a>.
+      </p>
+      <p>
+        JLPT data comes from <a href="http://www.tanos.co.uk/contact/">Jonathan Waller‘s</a> <a href="http://www.tanos.co.uk/jlpt/">JLPT Resources</a> page.
+      </p>
+    </div>
+  </div>
+
+</footer>
+
+    <script type="text/javascript" charset="utf-8">
+    var currentUser = null;
+
+</script>
+
+<script src="https%20__jisho.org_search__E5_8A_87_E8_8E_B7_E7_94_BB_20_23kanji_files/application-fe07b0b8ade93cbea5bf2f513ab5d59be67f0c111905dbeab.js"></script>
+
+  <style type="text/css" media="screen">
+    .debug { display: none; }
+  </style>
+
+  <script>
+    (function() {
+
+      var prefersColorThemeDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var pageColorTheme = document.getElementsByTagName("html")[0].attributes.getNamedItem("data-color-theme").value;
+      var url = '//d1w6u4xc3l95km.cloudfront.net/kanji-2015-03/05287.svg';
+
+      function initAnimation(response) {
+        var k;
+        var el = $('#kanji_strokes_5186627cd5dda796580002d2');
+        var result = [];
+        var doc = $(response);
+        var color_theme_light_brush = 'https://assets.jisho.org/assets/brushes/8-32218783e29738bb91521ff3b2697ee82ea31715b85f21a2021ff4d9af9fd9c7.png';
+        var color_theme_dark_brush = 'https://assets.jisho.org/assets/brushes/8-dark-1059de28a8009233b5224e5f8f2330b61565971aa77f978c2f2b238b5c639821.png';
+        var brush_theme;
+        if (pageColorTheme == "dark" || (prefersColorThemeDark && pageColorTheme != "light")) {
+          brush_theme = color_theme_dark_brush;
+        }
+        else {
+          brush_theme = color_theme_light_brush;
+        }
+        doc.find('path[d]').each(function() {
+          var el = $(this);
+          var type = el.attr('kvg:type');
+          var paths = el.attr('d');
+          result.push(type.charCodeAt(0).toString(16) + ':' + paths);
+        });
+        el.addClass('loaded');
+        el.show();
+        k = new Kanji(result, el, {
+          brush: brush_theme
+        });
+        k.draw();
+
+        $('.speed_slider', el).noUiSlider({
+          handles: 1,
+          start: [Kanji.getSetting('speed')],
+          range: [Kanji.MIN_SPEED, Kanji.MAX_SPEED]
+        }).change(function() {
+          var val = parseFloat($(this).val())
+          k.setSpeed(val);
+          k.animateFromStart();
+        });
+
+        $('.thickness_slider', el).noUiSlider({
+          handles: 1,
+          start: [Kanji.getSetting('thickness')],
+          range: [Kanji.MIN_THICKNESS, Kanji.MAX_THICKNESS],
+          slide: function() {
+            var val = parseFloat($(this).val())
+            k.setThickness(val);
+          }
+        });
+
+        $('.toggle_kanji_actions', el).click(function() {
+          el.addClass('show_actions');
+        });
+
+        $('.ok_button', el).click(function() {
+          el.removeClass('show_actions');
+        });
+
+        $('.kanji_play_button', el).on('click', function() {
+          el.addClass('activated');
+          k.animateFromStart();
+        });
+
+        $('.replay_button', el).on('click', function() {
+          k.animateFromStart();
+        });
+
+      }
+
+      function initDiagram(response) {
+        var el = $('.stroke_order_diagram--svg_container_for_5186627cd5dda796580002d2');
+        new strokeOrderDiagram(el.get(0), response);
+        el.show();
+      }
+
+      $.ajax({
+        type: 'GET',
+        dataType: 'xml',
+        url: url,
+        success: function(response) {
+          initAnimation(response);
+          initDiagram(response);
+        }
+      });
+
+    })();
+  </script>
+  <script>
+    (function() {
+
+      var prefersColorThemeDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var pageColorTheme = document.getElementsByTagName("html")[0].attributes.getNamedItem("data-color-theme").value;
+      var url = '//d1w6u4xc3l95km.cloudfront.net/kanji-2015-03/0753b.svg';
+
+      function initAnimation(response) {
+        var k;
+        var el = $('#kanji_strokes_51866275d5dda79658000104');
+        var result = [];
+        var doc = $(response);
+        var color_theme_light_brush = 'https://assets.jisho.org/assets/brushes/8-32218783e29738bb91521ff3b2697ee82ea31715b85f21a2021ff4d9af9fd9c7.png';
+        var color_theme_dark_brush = 'https://assets.jisho.org/assets/brushes/8-dark-1059de28a8009233b5224e5f8f2330b61565971aa77f978c2f2b238b5c639821.png';
+        var brush_theme;
+        if (pageColorTheme == "dark" || (prefersColorThemeDark && pageColorTheme != "light")) {
+          brush_theme = color_theme_dark_brush;
+        }
+        else {
+          brush_theme = color_theme_light_brush;
+        }
+        doc.find('path[d]').each(function() {
+          var el = $(this);
+          var type = el.attr('kvg:type');
+          var paths = el.attr('d');
+          result.push(type.charCodeAt(0).toString(16) + ':' + paths);
+        });
+        el.addClass('loaded');
+        el.show();
+        k = new Kanji(result, el, {
+          brush: brush_theme
+        });
+        k.draw();
+
+        $('.speed_slider', el).noUiSlider({
+          handles: 1,
+          start: [Kanji.getSetting('speed')],
+          range: [Kanji.MIN_SPEED, Kanji.MAX_SPEED]
+        }).change(function() {
+          var val = parseFloat($(this).val())
+          k.setSpeed(val);
+          k.animateFromStart();
+        });
+
+        $('.thickness_slider', el).noUiSlider({
+          handles: 1,
+          start: [Kanji.getSetting('thickness')],
+          range: [Kanji.MIN_THICKNESS, Kanji.MAX_THICKNESS],
+          slide: function() {
+            var val = parseFloat($(this).val())
+            k.setThickness(val);
+          }
+        });
+
+        $('.toggle_kanji_actions', el).click(function() {
+          el.addClass('show_actions');
+        });
+
+        $('.ok_button', el).click(function() {
+          el.removeClass('show_actions');
+        });
+
+        $('.kanji_play_button', el).on('click', function() {
+          el.addClass('activated');
+          k.animateFromStart();
+        });
+
+        $('.replay_button', el).on('click', function() {
+          k.animateFromStart();
+        });
+
+      }
+
+      function initDiagram(response) {
+        var el = $('.stroke_order_diagram--svg_container_for_51866275d5dda79658000104');
+        new strokeOrderDiagram(el.get(0), response);
+        el.show();
+      }
+
+      $.ajax({
+        type: 'GET',
+        dataType: 'xml',
+        url: url,
+        success: function(response) {
+          initAnimation(response);
+          initDiagram(response);
+        }
+      });
+
+    })();
+  </script>
+
+
+    <script>
+
+  (function() {
+
+   Namespace('Jisho.KeyEvents', {});
+     var body = $(document.body);
+
+     function applyBodyClass(keyEvent, on) {
+       body.toggleClass(getClassForEvent(keyEvent), on !== (keyEvent.type == 'display'));
+     }
+
+     function getClassForEvent(keyEvent) {
+       return (keyEvent.type == 'display' ? 'hide' : 'highlight') + '_' + keyEvent.name;
+     }
+
+     body.keydown(function(e) {
+       var events = Jisho.KeyEvents[e.which];
+       if(events) {
+         events.each(function(keyEvent) {
+           if(keyEvent.active) return;
+           keyEvent.active = true;
+           if(keyEvent.phase == 'toggle') {
+             body.toggleClass(getClassForEvent(keyEvent));
+           } else {
+             applyBodyClass(keyEvent, true);
+           }
+         });
+       }
+     });
+
+     body.keyup(function(e) {
+       var events = Jisho.KeyEvents[e.which];
+       if(events) {
+         events.each(function(keyEvent) {
+           keyEvent.active = false;
+           if(keyEvent.phase !== 'toggle') {
+             applyBodyClass(keyEvent, false);
+           }
+         });
+       }
+     });
+
+
+  })();
+
+</script>
+
+    <div id="loginHelpDialog" class="reveal-modal" data-reveal="" aria-labelledby="Login" aria-hidden="true" role="dialog">
+  <div class="row">
+    <div class="login_help_dialog-new_user columns small-12 medium-6">
+      <h3>New to Jisho?</h3>
+
+      <a href="javascript:void(0)" class="js-login-help-sign-up">Click here to sign up!</a>
+    </div>
+
+    <div class="login_help_dialog-existing_user columns small-12 medium-6">
+      <h3>Have an account?</h3>
+
+      <p>We recently switched to a new login system. Please enter the email you registered with and follow the instructions.</p>
+
+      <form class="js-login-help-log-in" method="get" accept-charset="utf-8">
+        <p><input type="text" name="email"></p>
+        <p><input type="submit" value="Log in" class="button"></p>
+      </form>
+    </div>
+  </div>
+
+  <a class="close-reveal-modal" aria-label="Close">×</a>
+</div>
+
+  
+
+<div id="tooltip" style="position: absolute; display: none;"><div class="arrow" style=""></div><div class="content"></div></div></body></html>
