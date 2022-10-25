@@ -1,0 +1,29 @@
+<svg class="stroke_order_diagram--svg_container_for_51866281d5dda79658000438" style="height: 100px; width: 300px;" viewBox="0 0 300 100">
+<g id="058eb_borders">
+	<line x1="1" x2="299" y1="1" y2="1" class="stroke_order_diagram--bounding_box"></line>
+	<line x1="1" x2="1" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line>
+	<line x1="1" x2="299" y1="99" y2="99" class="stroke_order_diagram--bounding_box"></line>
+	<line x1="0" x2="300" y1="50" y2="50" class="stroke_order_diagram--guide_line"></line>
+</g>
+<g id="058eb_1">
+	<line x1="50" x2="50" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line>
+	<line x1="99" x2="99" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line>
+	<path id="kvg:058eb-s1" kvg:type="㇐" d="M13.13,54.98c3.87,0.9,7.66,0.43,11.36,0.16c18.76-1.39,44.96-3.08,61.9-3.32c3.22-0.05,6.57,0.08,9.74,0.76" xmlns:kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,-4,-4)" class="stroke_order_diagram--current_path"></path>
+	<circle cx="13.13" cy="54.98" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,-4,-4)"></circle>
+</g>
+<g id="058eb_2">
+	<line x1="150" x2="150" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line>
+	<line x1="199" x2="199" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line>
+	<path id="kvg:058eb-s1" kvg:type="㇐" d="M13.13,54.98c3.87,0.9,7.66,0.43,11.36,0.16c18.76-1.39,44.96-3.08,61.9-3.32c3.22-0.05,6.57,0.08,9.74,0.76" xmlns:kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,96,-4)" class="stroke_order_diagram--existing_path"/>
+	<path id="kvg:058eb-s2" kvg:type="㇑a" d="M52.25,17.25C53.31,18.31,54,19.88,54,21.5c0,1.03,0.25,58.62,0.25,66" xmlns:kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,96,-4)" class="stroke_order_diagram--current_path"></path>
+	<circle cx="52.25" cy="17.25" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,96,-4)"></circle>
+</g>
+<g id="058eb_3">
+	<line x1="250" x2="250" y1="1" y2="99" class="stroke_order_diagram--guide_line"></line>
+	<line x1="299" x2="299" y1="1" y2="99" class="stroke_order_diagram--bounding_box"></line>
+	<path id="kvg:058eb-s1" kvg:type="㇐" d="M13.13,54.98c3.87,0.9,7.66,0.43,11.36,0.16c18.76-1.39,44.96-3.08,61.9-3.32c3.22-0.05,6.57,0.08,9.74,0.76" xmlns:kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,196,-4)" class="stroke_order_diagram--existing_path"/>
+	<path id="kvg:058eb-s2" kvg:type="㇑a" d="M52.25,17.25C53.31,18.31,54,19.88,54,21.5c0,1.03,0.25,58.62,0.25,66" xmlns:kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,196,-4)" class="stroke_order_diagram--existing_path"/>
+	<path id="kvg:058eb-s3" kvg:type="㇐" d="M21.75,89.45c2.73,0.83,5.82,0.54,8.62,0.42c12.73-0.57,33.94-2.04,45.88-2.17c2.97-0.03,5.83,0.21,8.75,0.74" xmlns:kvg="http://kanjivg.tagaini.net" transform="matrix(1,0,0,1,196,-4)" class="stroke_order_diagram--current_path"></path>
+	<circle cx="21.75" cy="89.45" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,196,-4)"></circle>
+</g>
+</svg>

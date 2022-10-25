@@ -90,15 +90,51 @@ public class JishoHelper
             .Attributes.First(a => a.Name == "class").Value
             .Replace("stroke_order_diagram--svg_container_for_", "");
 
-        var svgPath = _svgSrc[kanjiId];
-        var svgSrc = GetHelper.FromUrl(svgPath);
-        var svgNode = DocNode(svgSrc);
+        var kanjivgPath = _svgSrc[kanjiId];
+        var kanjivgSrc = GetHelper.FromUrl(kanjivgPath);
+        var kanjivg = DocNode(kanjivgSrc);
 
-        return SVGToDiagramConverter(svgNode).OuterHtml;
+        return SVGToDiagramConverter(kanjivg).OuterHtml;
     }
 
-    private HtmlNode SVGToDiagramConverter(HtmlNode svgNode) //mb xml, mb svg
+    private HtmlNode SVGToDiagramConverter(HtmlNode kanjivg) //mb xml, mb svg
     {
-        return HtmlNode.CreateNode("<p></p>");
+        var diagram = HtmlNode.CreateNode("<svg></svg>");
+
+        var id = Regex.Match( // id="kvg:StrokeNumbers_058eb"
+                kanjivg.QuerySelector("[id*='StrokeNumbers']").Id,
+                "[^_]+_(.+)",
+                RegexOptions.None
+            ).Groups[1].Value;
+        var strokes = int.Parse(
+            kanjivg.QuerySelector("[id*='StrokeNumbers'] :last-child").InnerText);
+
+        for (int i = 0; i <= strokes; i++)
+        {
+            if (0 == i) 
+            {
+                diagram.AppendChild(HtmlNode.CreateNode(
+                    $@"<g id='{id}_borders'>
+    <line x1='1' x2='{strokes * 100 - 1}' y1='1'  y2='1'  class='stroke_order_diagram--bounding_box'></line>
+    <line x1='1' x2='1'                   y1='1'  y2='99' class='stroke_order_diagram--bounding_box'></line>
+    <line x1='1' x2='{strokes * 100 - 1}' y1='99' y2='99' class='stroke_order_diagram--bounding_box'></line>
+    <line x1='0' x2='{strokes * 100}'     y1='50' y2='50' class='stroke_order_diagram--guide_line'></line>
+</g>".Replace("\\n", "")));
+            }
+
+            var strokeNode = HtmlNode.CreateNode($@"<g id='{id}_{i}'>
+    <line x1='{(i - 1) + 50}' x2='{(i - 1) + 50}' y1='1' y2='99' class='stroke_order_diagram--guide_line'></line>
+    <line x1='{i * 100 - 1}'  x2='{i * 100 - 1}'  y1='1' y2='99' class='stroke_order_diagram--bounding_box'></line>
+</g>");
+            // todo transform, del "\n"
+
+            // todo paths
+
+            //todo circles
+
+            diagram.AppendChild(strokeNode);
+        }
+
+        return diagram;
     }
 }
