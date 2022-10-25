@@ -111,7 +111,7 @@ public class JishoHelper
 
         for (int i = 0; i <= strokes; i++)
         {
-            if (0 == i) 
+            if (0 == i)
             {
                 diagram.AppendChild(HtmlNode.CreateNode(
                     $@"<g id='{id}_borders'>
@@ -121,18 +121,36 @@ public class JishoHelper
     <line x1='0' x2='{strokes * 100}'     y1='50' y2='50' class='stroke_order_diagram--guide_line'></line>
 </g>".Replace("\n", "")));
             }
-
-            var strokeNode = HtmlNode.CreateNode($@"<g id='{id}_{i}'>
+            else {
+                var strokeNode = HtmlNode.CreateNode($@"<g id='{id}_{i}'>
     <line x1='{(i - 1) + 50}' x2='{(i - 1) + 50}' y1='1' y2='99' class='stroke_order_diagram--guide_line'></line>
     <line x1='{i * 100 - 1}'  x2='{i * 100 - 1}'  y1='1' y2='99' class='stroke_order_diagram--bounding_box'></line>
 </g>".Replace("\n", ""));
-            // todo transform
+                // todo transform
 
-            // todo paths
+                for (var ii = 1; ii <= i; ii++)
+                {
+                    var path = kanjivg.QuerySelector($"path[id$='{ii}']").Clone();
+                    path.AddClass(i == ii
+                        ? "stroke_order_diagram--current_path"
+                        : "stroke_order_diagram--existing_path");
+                        // todo fix class
+                    // path.SetAttributeValue("transformation", "");
+                    strokeNode.AppendChild(path);
 
-            //todo circles
+                    if (i == ii)
+                    {
+                        var pathStart = Regex.Match(path.OuterHtml, "M([^c]+)c", RegexOptions.None)
+                            .Groups[1].Value.Split(',');
+                        strokeNode.AppendChild(HtmlNode.CreateNode(
+                            // <circle cx="52.25" cy="17.25" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,96,-4)"></circle>
+                            $"<circle cx='{pathStart[0]}' cy='{pathStart[1]}' r='4' class='stroke_order_diagram--path_start'></circle>")
+                        );
+                    }
+                }
 
-            diagram.AppendChild(strokeNode);
+                diagram.AppendChild(strokeNode);
+            }
         }
 
         return diagram;
