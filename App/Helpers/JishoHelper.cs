@@ -14,30 +14,31 @@ public class JishoHelper
     // https://d1w6u4xc3l95km.cloudfront.net/kanji-2015-03/09b3c.svg
 
     private HtmlNode _htmlNode;
+    private Dictionary<string, string> _svgSrc;
 
     public JishoHelper(string htmlSrc)
     {
-        var htmlDocument = new HtmlDocument();
-        htmlDocument.LoadHtml(htmlSrc);
-        _htmlNode = htmlDocument.DocumentNode;
+        _htmlNode = DocNode(htmlSrc);
+        _svgSrc = SvgSrcParser();
 
         var kanjiDetails = _htmlNode.QuerySelectorAll(".kanji.details");
 
         Kanjis = kanjiDetails
-            .Select(p =>
+            .Select(kd =>
             {
-                var k = p.QuerySelector(".character").InnerHtml;
-                var m = p.QuerySelector(".kanji-details__main-meanings").InnerText.Trim();
-                var kun = p.QuerySelectorAll(".kun_yomi .kanji-details__main-readings-list a")?
-                    .Select(o => o.InnerHtml).ToArray();
-                var on = p.QuerySelectorAll(".on_yomi .kanji-details__main-readings-list a")?
-                    .Select(o => o.InnerHtml).ToArray();
-                var g = p.QuerySelector(".grade strong")?.InnerHtml
+                var k = kd.QuerySelector(".character").InnerHtml;
+                var m = kd.QuerySelector(".kanji-details__main-meanings").InnerText.Trim();
+                var kun = kd.QuerySelectorAll(".kun_yomi .kanji-details__main-readings-list a")?
+                    .Select(r => r.InnerHtml).ToArray();
+                var on = kd.QuerySelectorAll(".on_yomi .kanji-details__main-readings-list a")?
+                    .Select(r => r.InnerHtml).ToArray();
+                var g = kd.QuerySelector(".grade strong")?.InnerHtml
                     .Replace("grade ", "")
                     .Replace("junior high", "H");
-                var j = p.QuerySelector(".jlpt strong")?.InnerHtml;
-                var f = p.QuerySelector(".frequency strong")?.InnerHtml;
-                var s = p.QuerySelector(".stroke_order_diagram--outer_container").OuterHtml;
+                var j = kd.QuerySelector(".jlpt strong")?.InnerHtml;
+                var f = kd.QuerySelector(".frequency strong")?.InnerHtml;
+                var s = StrokeOrderDiagramGenerator(
+                    container: kd.QuerySelector(".stroke_order_diagram--outer_container"));
 
                 return new JishoKanji
                 {
@@ -54,4 +55,50 @@ public class JishoHelper
     }
 
     public IEnumerable<JishoKanji> Kanjis { get; internal set; }
+
+    private HtmlNode DocNode(string src)
+    {
+        var doc = new HtmlDocument();
+        doc.LoadHtml(src);
+
+        return doc.DocumentNode;
+    }
+
+    private Dictionary<string, string> SvgSrcParser()
+    {
+        // var url = '//d1w6u4xc3l95km.cloudfront.net/kanji-2015-03/09b3c.svg';
+        // var el = $('#kanji_strokes_51866279d5dda796580001ea');
+
+        var pattern = @"'(//.+cloudfront[^']+)'[^']+'(#[^']+)'";
+        var matches = Regex.Matches(_htmlNode.InnerHtml, pattern, RegexOptions.None);
+
+        return
+            matches?.ToDictionary(
+                keySelector: el =>
+                    el.Groups[2].Value.Replace("#kanji_strokes_", ""),
+                elementSelector: el =>
+                    $"https:{el.Groups[1].Value}")
+
+            ?? new Dictionary<string, string>();
+    }
+
+    private string StrokeOrderDiagramGenerator(HtmlNode container)
+    {
+        // <svg class="stroke_order_diagram--svg_container_for_51866279d5dda796580001ea"
+
+        var kanjiId = container.Element("svg")
+            .Attributes.First(a => a.Name == "class").Value
+            .Replace("stroke_order_diagram--svg_container_for_", "");
+
+        var svgPath = _svgSrc[kanjiId];
+        var svgSrc = GetHelper.FromUrl(svgPath);
+        var svgNode = DocNode(svgSrc);
+
+        return SVGToDiagramConverter(svgNode).OuterHtml;
+    }
+
+    private HtmlNode SVGToDiagramConverter(HtmlNode svgNode) //mb xml, mb svg
+    {
+        return HtmlNode.CreateNode("<p></p>");
+    }
 }
