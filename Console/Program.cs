@@ -18,8 +18,8 @@ public class Program
     }
 
     private static void TestJishoHelper() {
-        // var htmlSrc = GetHelper.FromFile(_testFile);
-        var htmlSrc = GetHelper.FromUrl(_testUrl);
+        var htmlSrc = GetHelper.FromFile(_testFile);
+        // var htmlSrc = GetHelper.FromUrl(_testUrl);
 
         var jisho = new JishoHelper(htmlSrc);
 
