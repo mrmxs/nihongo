@@ -126,7 +126,7 @@ $@"<g id='{id}_borders'>
     <line x1='1' x2='1'                   y1='1'  y2='99' class='stroke_order_diagram--bounding_box'></line>
     <line x1='1' x2='{strokes * 100 - 1}' y1='99' y2='99' class='stroke_order_diagram--bounding_box'></line>
     <line x1='0' x2='{strokes * 100}'     y1='50' y2='50' class='stroke_order_diagram--guide_line'></line>
-</g>".Replace("\n", "")));
+</g>"));
             }
             else
             {
@@ -134,7 +134,7 @@ $@"<g id='{id}_borders'>
 $@"<g id='{id}_{i}'>
     <line x1='{(i - 1) + 50}' x2='{(i - 1) + 50}' y1='1' y2='99' class='stroke_order_diagram--guide_line'></line>
     <line x1='{i * 100 - 1}'  x2='{i * 100 - 1}'  y1='1' y2='99' class='stroke_order_diagram--bounding_box'></line>
-</g>".Replace("\n", ""));
+</g>");
                 // todo transform
 
                 for (var ii = 1; ii <= i; ii++)
@@ -162,6 +162,8 @@ $"<circle cx='{pathStart[0]}' cy='{pathStart[1]}' r='4' class='stroke_order_diag
                 diagram.AppendChild(strokeNode);
             }
         }
+
+        diagram.InnerHtml = diagram.InnerHtml.Replace("\n", "");
 
         return diagram;
     }
