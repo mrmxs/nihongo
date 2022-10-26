@@ -1,3 +1,5 @@
+using System.Text;
+using System.Reflection.Metadata;
 using System.Text.RegularExpressions;
 using Fizzler.Systems.HtmlAgilityPack;
 using HtmlAgilityPack;
@@ -94,13 +96,11 @@ public class JishoHelper
         var kanjivgSrc = GetHelper.FromUrl(kanjivgPath);
         var kanjivg = DocNode(kanjivgSrc);
 
-        return SVGToDiagramConverter(kanjivg).OuterHtml;
+        return SVGToDiagramConverter(kanjiId, kanjivg).OuterHtml;
     }
 
-    private HtmlNode SVGToDiagramConverter(HtmlNode kanjivg) //mb xml, mb svg
+    private HtmlNode SVGToDiagramConverter(string kanjiId, HtmlNode kanjivg) //mb xml, mb svg
     {
-        var diagram = HtmlNode.CreateNode("<svg></svg>");
-
         var id = Regex.Match( // id="kvg:StrokeNumbers_058eb"
                 kanjivg.QuerySelector("[id*='StrokeNumbers']").Id,
                 "[^_]+_(.+)",
@@ -109,20 +109,29 @@ public class JishoHelper
         var strokes = int.Parse(
             kanjivg.QuerySelector("[id*='StrokeNumbers'] :last-child").InnerText);
 
+        var diagram = HtmlNode.CreateNode(
+$@"<svg
+    class='stroke_order_diagram--svg_container_for_{kanjiId}'
+    style='height: 100px; width: {strokes * 100}px;'
+    viewBox='0 0 {strokes * 100} 100'>
+</svg>");
+
         for (int i = 0; i <= strokes; i++)
         {
             if (0 == i)
             {
                 diagram.AppendChild(HtmlNode.CreateNode(
-                    $@"<g id='{id}_borders'>
+$@"<g id='{id}_borders'>
     <line x1='1' x2='{strokes * 100 - 1}' y1='1'  y2='1'  class='stroke_order_diagram--bounding_box'></line>
     <line x1='1' x2='1'                   y1='1'  y2='99' class='stroke_order_diagram--bounding_box'></line>
     <line x1='1' x2='{strokes * 100 - 1}' y1='99' y2='99' class='stroke_order_diagram--bounding_box'></line>
     <line x1='0' x2='{strokes * 100}'     y1='50' y2='50' class='stroke_order_diagram--guide_line'></line>
 </g>".Replace("\n", "")));
             }
-            else {
-                var strokeNode = HtmlNode.CreateNode($@"<g id='{id}_{i}'>
+            else
+            {
+                var strokeNode = HtmlNode.CreateNode(
+$@"<g id='{id}_{i}'>
     <line x1='{(i - 1) + 50}' x2='{(i - 1) + 50}' y1='1' y2='99' class='stroke_order_diagram--guide_line'></line>
     <line x1='{i * 100 - 1}'  x2='{i * 100 - 1}'  y1='1' y2='99' class='stroke_order_diagram--bounding_box'></line>
 </g>".Replace("\n", ""));
@@ -143,9 +152,9 @@ public class JishoHelper
                         var pathStart = Regex.Match(path.OuterHtml, "M([^c]+)c", RegexOptions.None)
                             .Groups[1].Value.Split(',');
                         strokeNode.AppendChild(HtmlNode.CreateNode(
-                            // <circle cx="52.25" cy="17.25" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,96,-4)"></circle>
-                            $"<circle cx='{pathStart[0]}' cy='{pathStart[1]}' r='4' class='stroke_order_diagram--path_start'></circle>")
-                        );
+// <circle cx="52.25" cy="17.25" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,96,-4)"></circle>
+$"<circle cx='{pathStart[0]}' cy='{pathStart[1]}' r='4' class='stroke_order_diagram--path_start'></circle>"
+                        ));
                     }
                 }
 
