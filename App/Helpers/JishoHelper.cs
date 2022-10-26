@@ -132,7 +132,7 @@ $@"<g id='{id}_borders'>
             {
                 var strokeNode = HtmlNode.CreateNode(
 $@"<g id='{id}_{i}'>
-    <line x1='{(i - 1) + 50}' x2='{(i - 1) + 50}' y1='1' y2='99' class='stroke_order_diagram--guide_line'></line>
+    <line x1='{i * 100 - 50}' x2='{i * 100 - 50}' y1='1' y2='99' class='stroke_order_diagram--guide_line'></line>
     <line x1='{i * 100 - 1}'  x2='{i * 100 - 1}'  y1='1' y2='99' class='stroke_order_diagram--bounding_box'></line>
 </g>");
                 // todo transform
