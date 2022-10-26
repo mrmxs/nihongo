@@ -143,8 +143,9 @@ $@"<g id='{id}_{i}'>
                     path.AddClass(i == ii
                         ? "stroke_order_diagram--current_path"
                         : "stroke_order_diagram--existing_path");
-                        // todo fix class
                     // path.SetAttributeValue("transformation", "");
+                    path.Attributes.ToList().ForEach(a =>
+                        a.QuoteType = AttributeValueQuote.SingleQuote);
                     strokeNode.AppendChild(path);
 
                     if (i == ii)
