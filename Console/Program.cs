@@ -8,37 +8,23 @@ using System.Text;
 
 public class Program
 {
+    private readonly static string _testFile =
+        $@"{Environment.CurrentDirectory}\test\鬼劇获画 #kanji - Jisho.org.htm";
+    private readonly static string _testUrl = "https://jisho.org/search/劇获画%23kanji";
+
     public static void Main(string[] args)
     {
-        TestJishoHelper(GetFromUrl());
+        TestJishoHelper();
     }
 
-    private static void TestJishoHelper(string htmlSrc) {
+    private static void TestJishoHelper() {
+        var htmlSrc = GetHelper.FromFile(_testFile);
+        // var htmlSrc = GetHelper.FromUrl(_testUrl);
+
         var jisho = new JishoHelper(htmlSrc);
 
         foreach (var kanji in jisho.Kanjis)
             Console.WriteLine(kanji);
-    }
-
-    private static string GetFromUrl() {
-        string url = "https://jisho.org/search/劇获画%23kanji";
-
-        using (HttpClient client = new HttpClient())
-        {
-            using (HttpResponseMessage response = client.GetAsync(url).Result)
-            {
-                using (HttpContent content = response.Content)
-                {
-                    return content.ReadAsStringAsync().Result;
-                }
-            }
-        }
-    }
-
-    private static string GetFromFile() {
-        var path = Environment.CurrentDirectory + @"\test\https __jisho.org_search__E5_8A_87_E8_8E_B7_E7_94_BB_20_23kanji.htm";
-        
-        return File.ReadAllText(path);
     }
 }
 
