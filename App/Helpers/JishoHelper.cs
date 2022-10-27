@@ -118,7 +118,7 @@ $@"<svg
 
         for (int i = 0; i <= strokes; i++)
         {
-            if (0 == i)
+            if (0 == i) // add borderlines
             {
                 diagram.AppendChild(HtmlNode.CreateNode(
 $@"<g id='{id}_borders'>
@@ -130,24 +130,25 @@ $@"<g id='{id}_borders'>
             }
             else
             {
+                // add stroke group
                 var strokeNode = HtmlNode.CreateNode(
 $@"<g id='{id}_{i}'>
     <line x1='{i * 100 - 50}' x2='{i * 100 - 50}' y1='1' y2='99' class='stroke_order_diagram--guide_line'></line>
     <line x1='{i * 100 - 1}'  x2='{i * 100 - 1}'  y1='1' y2='99' class='stroke_order_diagram--bounding_box'></line>
 </g>");
-                // todo transform
 
                 for (var ii = 1; ii <= i; ii++)
                 {
+                    // add stroke path
                     var path = kanjivg.QuerySelector($"path[id$='{ii}']").Clone();
                     path.AddClass(i == ii
                         ? "stroke_order_diagram--current_path"
                         : "stroke_order_diagram--existing_path");
-                    // path.SetAttributeValue("transformation", "");
                     path.Attributes.ToList().ForEach(a =>
                         a.QuoteType = AttributeValueQuote.SingleQuote);
                     strokeNode.AppendChild(path);
 
+                    // add path start marker
                     if (i == ii)
                     {
                         var pathStart = Regex.Match(path.OuterHtml, "M([^c]+)c", RegexOptions.None)
@@ -157,6 +158,14 @@ $@"<g id='{id}_{i}'>
 $"<circle cx='{pathStart[0]}' cy='{pathStart[1]}' r='4' class='stroke_order_diagram--path_start'></circle>"
                         ));
                     }
+                }
+
+                // add transformation
+                foreach (var node in strokeNode.QuerySelectorAll("path, circle"))
+                {
+                    node
+                        .SetAttributeValue("transform", $"matrix(1, 0, 0, 1, {i * 100 - 104}, -4)")
+                        .QuoteType = AttributeValueQuote.SingleQuote;
                 }
 
                 diagram.AppendChild(strokeNode);
