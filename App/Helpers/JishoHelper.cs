@@ -1,5 +1,3 @@
-using System.Text;
-using System.Reflection.Metadata;
 using System.Text.RegularExpressions;
 using Fizzler.Systems.HtmlAgilityPack;
 using HtmlAgilityPack;
@@ -16,12 +14,15 @@ public class JishoHelper
     // https://d1w6u4xc3l95km.cloudfront.net/kanji-2015-03/09b3c.svg
 
     private HtmlNode _htmlNode;
-    private Dictionary<string, string> _svgSrc;
+    private Dictionary<string, string> _kanjiVGLinksDic;
 
     public JishoHelper(string htmlSrc)
     {
-        _htmlNode = DocNode(htmlSrc);
-        _svgSrc = SvgSrcParser();
+        var doc = new HtmlDocument();
+        doc.LoadHtml(htmlSrc);
+        _htmlNode =  doc.DocumentNode;
+
+        _kanjiVGLinksDic = SvgSrcParser();
 
         var kanjiDetails = _htmlNode.QuerySelectorAll(".kanji.details");
 
@@ -58,14 +59,6 @@ public class JishoHelper
 
     public IEnumerable<JishoKanji> Kanjis { get; internal set; }
 
-    private HtmlNode DocNode(string src)
-    {
-        var doc = new HtmlDocument();
-        doc.LoadHtml(src);
-
-        return doc.DocumentNode;
-    }
-
     private Dictionary<string, string> SvgSrcParser()
     {
         // var url = '//d1w6u4xc3l95km.cloudfront.net/kanji-2015-03/09b3c.svg';
@@ -87,93 +80,18 @@ public class JishoHelper
     private string StrokeOrderDiagramGenerator(HtmlNode container)
     {
         // <svg class="stroke_order_diagram--svg_container_for_51866279d5dda796580001ea"
+        var diagramClass = container.Element("svg")
+            .Attributes.First(a => a.Name == "class").Value;
+        var kanjiVGHelper = new KanjiVGHelper(_kanjiVGLinksDic[
+            diagramClass
+                .Replace("stroke_order_diagram--svg_container_for_", "")
+        ]);
 
-        var kanjiId = container.Element("svg")
-            .Attributes.First(a => a.Name == "class").Value
-            .Replace("stroke_order_diagram--svg_container_for_", "");
+        var diagram = kanjiVGHelper.WritingDiagram.Clone();
+        diagram.SetAttributeValue("class", diagramClass)
+            .QuoteType = AttributeValueQuote.SingleQuote;
 
-        var kanjivgPath = _svgSrc[kanjiId];
-        var kanjivgSrc = GetHelper.FromUrl(kanjivgPath);
-        var kanjivg = DocNode(kanjivgSrc);
-
-        return SVGToDiagramConverter(kanjiId, kanjivg).OuterHtml;
-    }
-
-    private HtmlNode SVGToDiagramConverter(string kanjiId, HtmlNode kanjivg) //mb xml, mb svg
-    {
-        var id = Regex.Match( // id="kvg:StrokeNumbers_058eb"
-                kanjivg.QuerySelector("[id*='StrokeNumbers']").Id,
-                "[^_]+_(.+)",
-                RegexOptions.None
-            ).Groups[1].Value;
-        var strokes = int.Parse(
-            kanjivg.QuerySelector("[id*='StrokeNumbers'] :last-child").InnerText);
-
-        var diagram = HtmlNode.CreateNode(
-$@"<svg
-    class='stroke_order_diagram--svg_container_for_{kanjiId}'
-    style='height: 100px; width: {strokes * 100}px;'
-    viewBox='0 0 {strokes * 100} 100'>
-</svg>");
-
-        for (int i = 0; i <= strokes; i++)
-        {
-            if (0 == i) // add borderlines
-            {
-                diagram.AppendChild(HtmlNode.CreateNode(
-$@"<g id='{id}_borders'>
-    <line x1='1' x2='{strokes * 100 - 1}' y1='1'  y2='1'  class='stroke_order_diagram--bounding_box'></line>
-    <line x1='1' x2='1'                   y1='1'  y2='99' class='stroke_order_diagram--bounding_box'></line>
-    <line x1='1' x2='{strokes * 100 - 1}' y1='99' y2='99' class='stroke_order_diagram--bounding_box'></line>
-    <line x1='0' x2='{strokes * 100}'     y1='50' y2='50' class='stroke_order_diagram--guide_line'></line>
-</g>"));
-            }
-            else
-            {
-                // add stroke group
-                var strokeNode = HtmlNode.CreateNode(
-$@"<g id='{id}_{i}'>
-    <line x1='{i * 100 - 50}' x2='{i * 100 - 50}' y1='1' y2='99' class='stroke_order_diagram--guide_line'></line>
-    <line x1='{i * 100 - 1}'  x2='{i * 100 - 1}'  y1='1' y2='99' class='stroke_order_diagram--bounding_box'></line>
-</g>");
-
-                for (var ii = 1; ii <= i; ii++)
-                {
-                    // add stroke path
-                    var path = kanjivg.QuerySelector($"path[id$='{ii}']").Clone();
-                    path.AddClass(i == ii
-                        ? "stroke_order_diagram--current_path"
-                        : "stroke_order_diagram--existing_path");
-                    path.Attributes.ToList().ForEach(a =>
-                        a.QuoteType = AttributeValueQuote.SingleQuote);
-                    strokeNode.AppendChild(path);
-
-                    // add path start marker
-                    if (i == ii)
-                    {
-                        var pathStart = Regex.Match(path.OuterHtml, "M([^c]+)c", RegexOptions.None)
-                            .Groups[1].Value.Split(',');
-                        strokeNode.AppendChild(HtmlNode.CreateNode(
-// <circle cx="52.25" cy="17.25" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,96,-4)"></circle>
-$"<circle cx='{pathStart[0]}' cy='{pathStart[1]}' r='4' class='stroke_order_diagram--path_start'></circle>"
-                        ));
-                    }
-                }
-
-                // add transformation
-                foreach (var node in strokeNode.QuerySelectorAll("path, circle"))
-                {
-                    node
-                        .SetAttributeValue("transform", $"matrix(1, 0, 0, 1, {i * 100 - 104}, -4)")
-                        .QuoteType = AttributeValueQuote.SingleQuote;
-                }
-
-                diagram.AppendChild(strokeNode);
-            }
-        }
-
-        diagram.InnerHtml = diagram.InnerHtml.Replace("\n", "");
-
-        return diagram;
+        return
+            $"<div class='stroke_order_diagram--outer_container'>{diagram.OuterHtml}</div>";
     }
 }

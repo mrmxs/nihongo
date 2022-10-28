@@ -11,7 +11,6 @@ public class JishoKanji
     public string? Frequency { get; set; }
     public string StrokeOrder { get; set; }
 
-
     public override string ToString()
     {
         return $@"Kanji:		{Kanji}
