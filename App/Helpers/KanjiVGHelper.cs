@@ -4,6 +4,9 @@ using HtmlAgilityPack;
 
 namespace Nihongo.App.Helpers;
 
+/// <summary>
+/// KanjiVG project http://kanjivg.tagaini.net
+/// </summary>
 public class KanjiVGHelper
 {
     public KanjiVGHelper(string kanjivgUrl)
@@ -17,6 +20,12 @@ public class KanjiVGHelper
     public string SVG { get; internal set; }
     public HtmlNode WritingDiagram { get; internal set; }
 
+    /// <summary> 
+    /// SVG sttrokes for 鬼 by KanjiVG
+    /// https://d1w6u4xc3l95km.cloudfront.net/kanji-2015-03/09b3c.svg
+    /// </summary>
+    /// <param name="url">full path with domen</param>
+    /// <returns></returns>
     public static string GetSVG(string url)
     {
         return IOHelper.FromUrl(url);
