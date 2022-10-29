@@ -1,15 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-	<ItemGroup>
-		<ProjectReference Include="..\App\Nihongo.App.csproj" />
-		<ProjectReference Include="..\Core\Nihongo.Core.csproj" />
-	</ItemGroup>
-
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
 		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\App\Nihongo.App.csproj" />
+		<ProjectReference Include="..\Core\Nihongo.Core.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="config.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+    	<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="*" />
+	</ItemGroup>
 
 </Project>

@@ -1,53 +1,48 @@
 ﻿namespace Nihongo.Console;
 
 using Nihongo.App.Helpers;
+using Anki = Nihongo.App.Helpers.Anki;
+using Microsoft.Extensions.Configuration;
 using System;
 
 public class Program
 {
+    private static IConfiguration _config;
+
     public static void Main(string[] args)
     {
+        _config = new ConfigurationBuilder()
+                .AddJsonFile("config.json", optional: false, reloadOnChange: true)
+                .Build();
+
         GenerateAnkiImportFile();
     }
 
     private static void GenerateAnkiImportFile()
     {
-        var joyo = IOHelper.FromFile($@"{Environment.CurrentDirectory}\test\Jōyō_2020.txt")
-            .Split("\n");
+        var _joyo2020Src = $@"{Environment.CurrentDirectory}\{_config["joyo"]}";
+        var joyo = IOHelper.FromFile(_joyo2020Src).Split("\n");
 
         foreach (var grade in joyo)
         {
-            var gradeNumber = Array.IndexOf(joyo, grade) + 1;
-            var path = $@"{Environment.CurrentDirectory}\test\anki_import_jōyō_grade{gradeNumber}.txt";
-
+            var path = Anki.Importing.OutputPathJoyo(Array.IndexOf(joyo, grade) + 1);
             using (StreamWriter file = new(path))
             {
-                var header = new List<string> {
-                    "#deck:\"Kanji Writing\"",
-                    "#notetype:\"Kanji Writing\"",
-                    "#html:true"
-                };
-                header.ForEach(line => file.WriteLine(line));
+                Anki.Importing.FileHeader(Anki.Deck.KanjiWriting, Anki.NoteType.KanjiWriting)
+                    .ForEach(line => file.WriteLine(line));
 
                 // jisho search page contains max 10 kanjis
                 foreach (var ten in grade.Chunk(10))
                 {
                     var jisho = new JishoHelper(new string(ten), JishoHelper.SearchTag.Kanji);
-                    var ankiNotes = jisho.Kanjis?
-                        .Select(k => new JishoAnkiKanjiConverter().Convert(k));
-
-                    // var url = $"https://jisho.org/search/{new string(ten)}%23kanji";
-                    // var htmlSrc = IOHelper.FromUrl(url);
-                    // var ankiNotes = new JishoHelper(htmlSrc).Kanjis
-                    //     .Select(k => new JishoAnkiKanjiConverter().Convert(k));
-
-                    foreach (var note in ankiNotes)
-                    {
-                        file.WriteLine(note.ToString());
-                        Console.WriteLine(note.ToString());
-                    }
+                    jisho.Kanjis?
+                        .Select(k => new JishoAnkiKanjiConverter().Convert(k))
+                        .ToList().ForEach(note =>
+                        {
+                            file.WriteLine(note.ToString());
+                            Console.WriteLine(note.ToString());
+                        });
                 }
-
             }
         }
     }
