@@ -81,7 +81,7 @@ $@"<g id='{id}_{i}'>
                         // add path start marker
                         if (i == ii)
                         {
-                            var pathStart = Regex.Match(path.OuterHtml, "M([^c]+)c", RegexOptions.None)
+                            var pathStart = Regex.Match(path.OuterHtml, "M([^c]+)c", RegexOptions.IgnoreCase)
                                 .Groups[1].Value.Split(',');
                             strokeNode.AppendChild(HtmlNode.CreateNode(
 // <circle cx="52.25" cy="17.25" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,96,-4)"></circle>
