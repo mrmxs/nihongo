@@ -10,6 +10,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\App\Nihongo.App.csproj" />
 		<ProjectReference Include="..\Core\Nihongo.Core.csproj" />
+		<ProjectReference Include="..\Test\Nihongo.Test.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
