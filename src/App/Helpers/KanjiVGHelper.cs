@@ -4,6 +4,9 @@ using HtmlAgilityPack;
 
 namespace Nihongo.App.Helpers;
 
+/// <summary>
+/// KanjiVG project http://kanjivg.tagaini.net
+/// </summary>
 public class KanjiVGHelper
 {
 	public KanjiVGHelper(string kanjivgUrl)
@@ -17,9 +20,15 @@ public class KanjiVGHelper
 	public string SVG { get; internal set; }
 	public HtmlNode WritingDiagram { get; internal set; }
 
+	/// <summary> 
+	/// SVG sttrokes for 鬼 by KanjiVG
+	/// https://d1w6u4xc3l95km.cloudfront.net/kanji-2015-03/09b3c.svg
+	/// </summary>
+	/// <param name="url">full path with domen</param>
+	/// <returns></returns>
 	public static string GetSVG(string url)
 	{
-		return GetHelper.FromUrl(url);
+		return IOHelper.FromUrl(url);
 	}
 
 	public static HtmlNode GetStrokesDiagram(string kanjiVG)
@@ -81,7 +90,7 @@ $@"<g id='{id}_{i}'>
 						// add path start marker
 						if (i == ii)
 						{
-							var pathStart = Regex.Match(path.OuterHtml, "M([^c]+)c", RegexOptions.None)
+							var pathStart = Regex.Match(path.OuterHtml, "M([^c]+)c", RegexOptions.IgnoreCase)
 								.Groups[1].Value.Split(',');
 							strokeNode.AppendChild(HtmlNode.CreateNode(
 // <circle cx="52.25" cy="17.25" r="4" class="stroke_order_diagram--path_start" transform="matrix(1,0,0,1,96,-4)"></circle>

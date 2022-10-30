@@ -1,14 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-	<ItemGroup>
-		<ProjectReference Include="..\Core\Nihongo.Core.csproj" />
-	</ItemGroup>
-
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Core\Nihongo.Core.csproj" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Fizzler.Systems.HtmlAgilityPack" Version="1.2.1" />

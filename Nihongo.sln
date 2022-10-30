@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nihongo.App", "App\Nihongo.App.csproj", "{E914CE5F-D15F-4C50-95D5-F530EAED59DF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nihongo.App", "src\App\Nihongo.App.csproj", "{E914CE5F-D15F-4C50-95D5-F530EAED59DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nihongo.Console", "Console\Nihongo.Console.csproj", "{BAB8F42D-2795-41E5-8348-D7774F48848A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nihongo.Console", "src\Console\Nihongo.Console.csproj", "{BAB8F42D-2795-41E5-8348-D7774F48848A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nihongo.Core", "Core\Nihongo.Core.csproj", "{6A58EF62-B9E2-487E-9E1B-5AD5EF2608B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nihongo.Core", "src\Core\Nihongo.Core.csproj", "{6A58EF62-B9E2-487E-9E1B-5AD5EF2608B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nihongo.Test", "src\Test\Nihongo.Test.csproj", "{1EE03BC1-6DA2-402B-8145-B556FA7805D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +32,9 @@ Global
 		{6A58EF62-B9E2-487E-9E1B-5AD5EF2608B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A58EF62-B9E2-487E-9E1B-5AD5EF2608B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A58EF62-B9E2-487E-9E1B-5AD5EF2608B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EE03BC1-6DA2-402B-8145-B556FA7805D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EE03BC1-6DA2-402B-8145-B556FA7805D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EE03BC1-6DA2-402B-8145-B556FA7805D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EE03BC1-6DA2-402B-8145-B556FA7805D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
