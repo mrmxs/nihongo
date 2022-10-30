@@ -1,6 +1,7 @@
 ﻿namespace Nihongo.Console;
 
 using Nihongo.App.Helpers;
+using Nihongo.Test;
 using Anki = Nihongo.App.Helpers.Anki;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -12,10 +13,11 @@ public class Program
     public static void Main(string[] args)
     {
         _config = new ConfigurationBuilder()
-                .AddJsonFile("config.json", optional: false, reloadOnChange: true)
-                .Build();
-
-        GenerateAnkiImportFile();
+			.AddJsonFile("config.json", optional: false, reloadOnChange: true)
+			.Build();
+        TestGenerateAnkiImportFile.TestCheckAllJuniorHighKanjiExists();
+        TestGenerateAnkiImportFile.TestJishoHelper();
+        // GenerateAnkiImportFile();
     }
 
     private static void GenerateAnkiImportFile()
@@ -45,17 +47,5 @@ public class Program
                 }
             }
         }
-    }
-
-    private static void TestJishoHelper()
-    {
-        var jisho = new JishoHelper("劇获画", JishoHelper.SearchTag.Kanji);
-
-        // var testFile = $@"{Environment.CurrentDirectory}\test\鬼劇获画 #kanji - Jisho.org.htm";
-        // var htmlSrc = IOHelper.FromFile(testFile);
-        // var jisho = new JishoHelper().SetHtmlSource(htmlSrc);
-
-        foreach (var kanji in jisho.Kanjis)
-            Console.WriteLine(kanji);
     }
 }
